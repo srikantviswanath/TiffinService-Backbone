@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44321E5E906D003706F2 /* AppDelegate.swift */; };
+		CB1A44351E5E906D003706F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44341E5E906D003706F2 /* ViewController.swift */; };
+		CB1A44381E5E906E003706F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44361E5E906D003706F2 /* Main.storyboard */; };
+		CB1A443B1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44391E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld */; };
+		CB1A443D1E5E906E003706F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1A443C1E5E906E003706F2 /* Assets.xcassets */; };
+		CB1A44401E5E906E003706F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1A443E1E5E906E003706F2 /* LaunchScreen.storyboard */; };
+		CB1A444B1E5E906E003706F2 /* TiffinService_BackboneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A444A1E5E906E003706F2 /* TiffinService_BackboneTests.swift */; };
+		CB1A44561E5E906E003706F2 /* TiffinService_BackboneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44551E5E906E003706F2 /* TiffinService_BackboneUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB1A44471E5E906E003706F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1A44271E5E906D003706F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB1A442E1E5E906D003706F2;
+			remoteInfo = "TiffinService Backbone";
+		};
+		CB1A44521E5E906E003706F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1A44271E5E906D003706F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB1A442E1E5E906D003706F2;
+			remoteInfo = "TiffinService Backbone";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB1A442F1E5E906D003706F2 /* TiffinService Backbone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TiffinService Backbone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1A44321E5E906D003706F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB1A44341E5E906D003706F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB1A44371E5E906D003706F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB1A443A1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TiffinService_Backbone.xcdatamodel; sourceTree = "<group>"; };
+		CB1A443C1E5E906E003706F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB1A443F1E5E906E003706F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB1A44411E5E906E003706F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB1A44461E5E906E003706F2 /* TiffinService BackboneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TiffinService BackboneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1A444A1E5E906E003706F2 /* TiffinService_BackboneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiffinService_BackboneTests.swift; sourceTree = "<group>"; };
+		CB1A444C1E5E906E003706F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB1A44511E5E906E003706F2 /* TiffinService BackboneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TiffinService BackboneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1A44551E5E906E003706F2 /* TiffinService_BackboneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiffinService_BackboneUITests.swift; sourceTree = "<group>"; };
+		CB1A44571E5E906E003706F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB1A442C1E5E906D003706F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1A44431E5E906E003706F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1A444E1E5E906E003706F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB1A44261E5E906D003706F2 = {
+			isa = PBXGroup;
+			children = (
+				CB1A44311E5E906D003706F2 /* TiffinService Backbone */,
+				CB1A44491E5E906E003706F2 /* TiffinService BackboneTests */,
+				CB1A44541E5E906E003706F2 /* TiffinService BackboneUITests */,
+				CB1A44301E5E906D003706F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB1A44301E5E906D003706F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB1A442F1E5E906D003706F2 /* TiffinService Backbone.app */,
+				CB1A44461E5E906E003706F2 /* TiffinService BackboneTests.xctest */,
+				CB1A44511E5E906E003706F2 /* TiffinService BackboneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB1A44311E5E906D003706F2 /* TiffinService Backbone */ = {
+			isa = PBXGroup;
+			children = (
+				CB1A44321E5E906D003706F2 /* AppDelegate.swift */,
+				CB1A44341E5E906D003706F2 /* ViewController.swift */,
+				CB1A44361E5E906D003706F2 /* Main.storyboard */,
+				CB1A443C1E5E906E003706F2 /* Assets.xcassets */,
+				CB1A443E1E5E906E003706F2 /* LaunchScreen.storyboard */,
+				CB1A44411E5E906E003706F2 /* Info.plist */,
+				CB1A44391E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld */,
+			);
+			path = "TiffinService Backbone";
+			sourceTree = "<group>";
+		};
+		CB1A44491E5E906E003706F2 /* TiffinService BackboneTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB1A444A1E5E906E003706F2 /* TiffinService_BackboneTests.swift */,
+				CB1A444C1E5E906E003706F2 /* Info.plist */,
+			);
+			path = "TiffinService BackboneTests";
+			sourceTree = "<group>";
+		};
+		CB1A44541E5E906E003706F2 /* TiffinService BackboneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB1A44551E5E906E003706F2 /* TiffinService_BackboneUITests.swift */,
+				CB1A44571E5E906E003706F2 /* Info.plist */,
+			);
+			path = "TiffinService BackboneUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB1A442E1E5E906D003706F2 /* TiffinService Backbone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB1A445A1E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService Backbone" */;
+			buildPhases = (
+				CB1A442B1E5E906D003706F2 /* Sources */,
+				CB1A442C1E5E906D003706F2 /* Frameworks */,
+				CB1A442D1E5E906D003706F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TiffinService Backbone";
+			productName = "TiffinService Backbone";
+			productReference = CB1A442F1E5E906D003706F2 /* TiffinService Backbone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB1A44451E5E906E003706F2 /* TiffinService BackboneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB1A445D1E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneTests" */;
+			buildPhases = (
+				CB1A44421E5E906E003706F2 /* Sources */,
+				CB1A44431E5E906E003706F2 /* Frameworks */,
+				CB1A44441E5E906E003706F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB1A44481E5E906E003706F2 /* PBXTargetDependency */,
+			);
+			name = "TiffinService BackboneTests";
+			productName = "TiffinService BackboneTests";
+			productReference = CB1A44461E5E906E003706F2 /* TiffinService BackboneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB1A44501E5E906E003706F2 /* TiffinService BackboneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB1A44601E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneUITests" */;
+			buildPhases = (
+				CB1A444D1E5E906E003706F2 /* Sources */,
+				CB1A444E1E5E906E003706F2 /* Frameworks */,
+				CB1A444F1E5E906E003706F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB1A44531E5E906E003706F2 /* PBXTargetDependency */,
+			);
+			name = "TiffinService BackboneUITests";
+			productName = "TiffinService BackboneUITests";
+			productReference = CB1A44511E5E906E003706F2 /* TiffinService BackboneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB1A44271E5E906D003706F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Srikant Viswanath";
+				TargetAttributes = {
+					CB1A442E1E5E906D003706F2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					CB1A44451E5E906E003706F2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CB1A442E1E5E906D003706F2;
+					};
+					CB1A44501E5E906E003706F2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CB1A442E1E5E906D003706F2;
+					};
+				};
+			};
+			buildConfigurationList = CB1A442A1E5E906D003706F2 /* Build configuration list for PBXProject "TiffinService Backbone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB1A44261E5E906D003706F2;
+			productRefGroup = CB1A44301E5E906D003706F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB1A442E1E5E906D003706F2 /* TiffinService Backbone */,
+				CB1A44451E5E906E003706F2 /* TiffinService BackboneTests */,
+				CB1A44501E5E906E003706F2 /* TiffinService BackboneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB1A442D1E5E906D003706F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1A44401E5E906E003706F2 /* LaunchScreen.storyboard in Resources */,
+				CB1A443D1E5E906E003706F2 /* Assets.xcassets in Resources */,
+				CB1A44381E5E906E003706F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1A44441E5E906E003706F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1A444F1E5E906E003706F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB1A442B1E5E906D003706F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1A44351E5E906D003706F2 /* ViewController.swift in Sources */,
+				CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */,
+				CB1A443B1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1A44421E5E906E003706F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1A444B1E5E906E003706F2 /* TiffinService_BackboneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1A444D1E5E906E003706F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1A44561E5E906E003706F2 /* TiffinService_BackboneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB1A44481E5E906E003706F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB1A442E1E5E906D003706F2 /* TiffinService Backbone */;
+			targetProxy = CB1A44471E5E906E003706F2 /* PBXContainerItemProxy */;
+		};
+		CB1A44531E5E906E003706F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB1A442E1E5E906D003706F2 /* TiffinService Backbone */;
+			targetProxy = CB1A44521E5E906E003706F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB1A44361E5E906D003706F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB1A44371E5E906D003706F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB1A443E1E5E906E003706F2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB1A443F1E5E906E003706F2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB1A44581E5E906E003706F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB1A44591E5E906E003706F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB1A445B1E5E906E003706F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "TiffinService Backbone/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-Backbone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CB1A445C1E5E906E003706F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "TiffinService Backbone/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-Backbone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CB1A445E1E5E906E003706F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "TiffinService BackboneTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-BackboneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TiffinService Backbone.app/TiffinService Backbone";
+			};
+			name = Debug;
+		};
+		CB1A445F1E5E906E003706F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "TiffinService BackboneTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-BackboneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TiffinService Backbone.app/TiffinService Backbone";
+			};
+			name = Release;
+		};
+		CB1A44611E5E906E003706F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "TiffinService BackboneUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-BackboneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "TiffinService Backbone";
+			};
+			name = Debug;
+		};
+		CB1A44621E5E906E003706F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "TiffinService BackboneUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-BackboneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "TiffinService Backbone";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB1A442A1E5E906D003706F2 /* Build configuration list for PBXProject "TiffinService Backbone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1A44581E5E906E003706F2 /* Debug */,
+				CB1A44591E5E906E003706F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB1A445A1E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService Backbone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1A445B1E5E906E003706F2 /* Debug */,
+				CB1A445C1E5E906E003706F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB1A445D1E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1A445E1E5E906E003706F2 /* Debug */,
+				CB1A445F1E5E906E003706F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB1A44601E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1A44611E5E906E003706F2 /* Debug */,
+				CB1A44621E5E906E003706F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB1A44391E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB1A443A1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodel */,
+			);
+			currentVersion = CB1A443A1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodel */;
+			path = TiffinService_Backbone.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CB1A44271E5E906D003706F2 /* Project object */;
+}
