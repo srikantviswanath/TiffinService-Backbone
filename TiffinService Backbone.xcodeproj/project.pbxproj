@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B39754B6B5F9CE7F4BBDFAD /* Pods_TiffinService_Backbone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E107A1A3297702F443AF2AA /* Pods_TiffinService_Backbone.framework */; };
+		4A33025DF2207CDE11D30CF1 /* Pods_TiffinService_BackboneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EDB96C963FB9D258B2BB6F /* Pods_TiffinService_BackboneTests.framework */; };
+		98BA09B244F32A513B221175 /* Pods_TiffinService_BackboneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03255E78D3BEC25343D5FA8C /* Pods_TiffinService_BackboneUITests.framework */; };
 		CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44321E5E906D003706F2 /* AppDelegate.swift */; };
 		CB1A44351E5E906D003706F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44341E5E906D003706F2 /* ViewController.swift */; };
 		CB1A44381E5E906E003706F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44361E5E906D003706F2 /* Main.storyboard */; };
@@ -35,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03255E78D3BEC25343D5FA8C /* Pods_TiffinService_BackboneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiffinService_BackboneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		061E5A3CB83FF9D0DF0E1642 /* Pods-TiffinService Backbone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService Backbone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService Backbone/Pods-TiffinService Backbone.debug.xcconfig"; sourceTree = "<group>"; };
+		30925154A7FFD87C7428F949 /* Pods-TiffinService Backbone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService Backbone.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService Backbone/Pods-TiffinService Backbone.release.xcconfig"; sourceTree = "<group>"; };
+		3E107A1A3297702F443AF2AA /* Pods_TiffinService_Backbone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiffinService_Backbone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BD96FFF71D7C66652FD094D /* Pods-TiffinService BackboneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		86F045515BF8BACB9D9CB384 /* Pods-TiffinService BackboneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneTests/Pods-TiffinService BackboneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2EDB96C963FB9D258B2BB6F /* Pods_TiffinService_BackboneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiffinService_BackboneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C679BE895F7D550EC22D816D /* Pods-TiffinService BackboneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneTests/Pods-TiffinService BackboneTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB1A442F1E5E906D003706F2 /* TiffinService Backbone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TiffinService Backbone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1A44321E5E906D003706F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB1A44341E5E906D003706F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +60,7 @@
 		CB1A44511E5E906E003706F2 /* TiffinService BackboneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TiffinService BackboneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1A44551E5E906E003706F2 /* TiffinService_BackboneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiffinService_BackboneUITests.swift; sourceTree = "<group>"; };
 		CB1A44571E5E906E003706F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B39754B6B5F9CE7F4BBDFAD /* Pods_TiffinService_Backbone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A33025DF2207CDE11D30CF1 /* Pods_TiffinService_BackboneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BA09B244F32A513B221175 /* Pods_TiffinService_BackboneUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		427B06155135254F3E714000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E107A1A3297702F443AF2AA /* Pods_TiffinService_Backbone.framework */,
+				A2EDB96C963FB9D258B2BB6F /* Pods_TiffinService_BackboneTests.framework */,
+				03255E78D3BEC25343D5FA8C /* Pods_TiffinService_BackboneUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B808CE9E7307F047B089F9FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				061E5A3CB83FF9D0DF0E1642 /* Pods-TiffinService Backbone.debug.xcconfig */,
+				30925154A7FFD87C7428F949 /* Pods-TiffinService Backbone.release.xcconfig */,
+				86F045515BF8BACB9D9CB384 /* Pods-TiffinService BackboneTests.debug.xcconfig */,
+				C679BE895F7D550EC22D816D /* Pods-TiffinService BackboneTests.release.xcconfig */,
+				4BD96FFF71D7C66652FD094D /* Pods-TiffinService BackboneUITests.debug.xcconfig */,
+				D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CB1A44261E5E906D003706F2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +121,8 @@
 				CB1A44491E5E906E003706F2 /* TiffinService BackboneTests */,
 				CB1A44541E5E906E003706F2 /* TiffinService BackboneUITests */,
 				CB1A44301E5E906D003706F2 /* Products */,
+				B808CE9E7307F047B089F9FD /* Pods */,
+				427B06155135254F3E714000 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +139,7 @@
 		CB1A44311E5E906D003706F2 /* TiffinService Backbone */ = {
 			isa = PBXGroup;
 			children = (
+				CB1A44631E5EA14E003706F2 /* Model */,
 				CB1A44321E5E906D003706F2 /* AppDelegate.swift */,
 				CB1A44341E5E906D003706F2 /* ViewController.swift */,
 				CB1A44361E5E906D003706F2 /* Main.storyboard */,
@@ -128,6 +169,13 @@
 			path = "TiffinService BackboneUITests";
 			sourceTree = "<group>";
 		};
+		CB1A44631E5EA14E003706F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB1A445A1E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService Backbone" */;
 			buildPhases = (
+				9216ACD944DE7E3E96663CC7 /* [CP] Check Pods Manifest.lock */,
 				CB1A442B1E5E906D003706F2 /* Sources */,
 				CB1A442C1E5E906D003706F2 /* Frameworks */,
 				CB1A442D1E5E906D003706F2 /* Resources */,
+				306964A04D67386DF99B2C6C /* [CP] Embed Pods Frameworks */,
+				4785490D45126E7983B2DCDC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB1A445D1E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneTests" */;
 			buildPhases = (
+				93B47B9B8B6CA4498221EE3D /* [CP] Check Pods Manifest.lock */,
 				CB1A44421E5E906E003706F2 /* Sources */,
 				CB1A44431E5E906E003706F2 /* Frameworks */,
 				CB1A44441E5E906E003706F2 /* Resources */,
+				A1E0880187410A44BAAE0553 /* [CP] Embed Pods Frameworks */,
+				9E988E299DCE46616EEEC5FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB1A44601E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneUITests" */;
 			buildPhases = (
+				2AA3CAD6BD5D54D48E55DFBC /* [CP] Check Pods Manifest.lock */,
 				CB1A444D1E5E906E003706F2 /* Sources */,
 				CB1A444E1E5E906E003706F2 /* Frameworks */,
 				CB1A444F1E5E906E003706F2 /* Resources */,
+				586998A309C0DDFC33F7C22D /* [CP] Embed Pods Frameworks */,
+				0CF5B2703E7869089F71E0B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +253,7 @@
 				TargetAttributes = {
 					CB1A442E1E5E906D003706F2 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8WUCP656VM;
 						ProvisioningStyle = Automatic;
 					};
 					CB1A44451E5E906E003706F2 = {
@@ -256,6 +314,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CF5B2703E7869089F71E0B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AA3CAD6BD5D54D48E55DFBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		306964A04D67386DF99B2C6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiffinService Backbone/Pods-TiffinService Backbone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4785490D45126E7983B2DCDC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiffinService Backbone/Pods-TiffinService Backbone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		586998A309C0DDFC33F7C22D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9216ACD944DE7E3E96663CC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		93B47B9B8B6CA4498221EE3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E988E299DCE46616EEEC5FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiffinService BackboneTests/Pods-TiffinService BackboneTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1E0880187410A44BAAE0553 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiffinService BackboneTests/Pods-TiffinService BackboneTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB1A442B1E5E906D003706F2 /* Sources */ = {
@@ -412,8 +608,10 @@
 		};
 		CB1A445B1E5E906E003706F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061E5A3CB83FF9D0DF0E1642 /* Pods-TiffinService Backbone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8WUCP656VM;
 				INFOPLIST_FILE = "TiffinService Backbone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-Backbone";
@@ -424,8 +622,10 @@
 		};
 		CB1A445C1E5E906E003706F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30925154A7FFD87C7428F949 /* Pods-TiffinService Backbone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8WUCP656VM;
 				INFOPLIST_FILE = "TiffinService Backbone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "viswanath-srikant.TiffinService-Backbone";
@@ -436,6 +636,7 @@
 		};
 		CB1A445E1E5E906E003706F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F045515BF8BACB9D9CB384 /* Pods-TiffinService BackboneTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -450,6 +651,7 @@
 		};
 		CB1A445F1E5E906E003706F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C679BE895F7D550EC22D816D /* Pods-TiffinService BackboneTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,6 +666,7 @@
 		};
 		CB1A44611E5E906E003706F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BD96FFF71D7C66652FD094D /* Pods-TiffinService BackboneUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "TiffinService BackboneUITests/Info.plist";
@@ -477,6 +680,7 @@
 		};
 		CB1A44621E5E906E003706F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "TiffinService BackboneUITests/Info.plist";
@@ -507,6 +711,7 @@
 				CB1A445C1E5E906E003706F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB1A445D1E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +720,7 @@
 				CB1A445F1E5E906E003706F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB1A44601E5E906E003706F2 /* Build configuration list for PBXNativeTarget "TiffinService BackboneUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +729,7 @@
 				CB1A44621E5E906E003706F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

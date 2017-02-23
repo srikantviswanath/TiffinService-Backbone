@@ -1,0 +1,6 @@
+framework module Pods_TiffinService_BackboneUITests {
+  umbrella header "Pods-TiffinService BackboneUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
