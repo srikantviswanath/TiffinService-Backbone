@@ -5,6 +5,7 @@ pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Core'
+pod 'ObjectMapper', '~> 2.2'
 end
 
 target 'TiffinService BackboneTests' do

@@ -21,7 +21,7 @@
 		CB1A44691E5EA9E3003706F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */; };
 		CB1A446A1E5EA9E3003706F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */; };
 		CB1A446B1E5EA9E3003706F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */; };
-		CB1A446E1E5EB866003706F2 /* MenuItem_mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A446D1E5EB866003706F2 /* MenuItem_mapper.swift */; };
+		CB1A44701E6139C7003706F2 /* MenuInventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,7 @@
 		CB1A44571E5E906E003706F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1A44641E5EA2BD003706F2 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CB1A446D1E5EB866003706F2 /* MenuItem_mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem_mapper.swift; sourceTree = "<group>"; };
+		CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuInventoryVC.swift; sourceTree = "<group>"; };
 		D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +145,6 @@
 		CB1A44311E5E906D003706F2 /* TiffinService Backbone */ = {
 			isa = PBXGroup;
 			children = (
-				CB1A446C1E5EB7FD003706F2 /* Service Mappers */,
 				CB1A44631E5EA14E003706F2 /* Model */,
 				CB1A44321E5E906D003706F2 /* AppDelegate.swift */,
 				CB1A44361E5E906D003706F2 /* Main.storyboard */,
@@ -154,6 +153,7 @@
 				CB1A44411E5E906E003706F2 /* Info.plist */,
 				CB1A44391E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld */,
 				CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */,
+				CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */,
 			);
 			path = "TiffinService Backbone";
 			sourceTree = "<group>";
@@ -182,14 +182,6 @@
 				CB1A44641E5EA2BD003706F2 /* MenuItem.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		CB1A446C1E5EB7FD003706F2 /* Service Mappers */ = {
-			isa = PBXGroup;
-			children = (
-				CB1A446D1E5EB866003706F2 /* MenuItem_mapper.swift */,
-			);
-			name = "Service Mappers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,7 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1A446E1E5EB866003706F2 /* MenuItem_mapper.swift in Sources */,
+				CB1A44701E6139C7003706F2 /* MenuInventoryVC.swift in Sources */,
 				CB1A44651E5EA2BD003706F2 /* MenuItem.swift in Sources */,
 				CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */,
 				CB1A443B1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld in Sources */,

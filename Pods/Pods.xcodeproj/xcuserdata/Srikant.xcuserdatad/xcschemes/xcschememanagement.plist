@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TiffinService Backbone.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C297C31D78FF6775C592240AA1E2272</key>
+		<key>B43918AB915242B851ABEFB5D70BE0AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA27F182289FDCA82B14D1D790E25FEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
