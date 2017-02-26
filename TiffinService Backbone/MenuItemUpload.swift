@@ -23,15 +23,13 @@ class MenuItemUpload: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func uploadBtnPressed(sender: UIButton) {
-        if (self.ItemNameField.text != nil) && (self.ItemPriceField != nil) && (self.ItemDescriptionField != nil) {
+        if (self.ItemNameField.text != "") && (self.ItemPriceField.text != "") && (self.ItemDescriptionField.text != "") {
             let newMenuItem = MenuItem(
                 name: self.ItemNameField.text!, desc: self.ItemDescriptionField.text!,
                 price: Int(self.ItemPriceField.text!)!
             )
             newMenuItem.writeToDB() {
-                self.ItemDescriptionField.text = nil
-                self.ItemNameField.text = nil
-                self.ItemPriceField.text = nil
+                self.performSegue(withIdentifier: "NewItemTiInventory", sender: nil)
             }
         }
     }

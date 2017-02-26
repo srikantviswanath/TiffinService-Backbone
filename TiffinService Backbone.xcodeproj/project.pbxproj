@@ -23,6 +23,8 @@
 		CB1A446B1E5EA9E3003706F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */; };
 		CB1A44701E6139C7003706F2 /* MenuInventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */; };
 		CB1A44731E623B08003706F2 /* MenuItemUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44721E623B08003706F2 /* MenuItemUpload.swift */; };
+		CB1A44751E62A727003706F2 /* OrderPlaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44741E62A727003706F2 /* OrderPlaced.swift */; };
+		CB1A44781E62AF94003706F2 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44771E62AF94003706F2 /* MenuItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuInventoryVC.swift; sourceTree = "<group>"; };
 		CB1A44721E623B08003706F2 /* MenuItemUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemUpload.swift; sourceTree = "<group>"; };
+		CB1A44741E62A727003706F2 /* OrderPlaced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderPlaced.swift; sourceTree = "<group>"; };
+		CB1A44771E62AF94003706F2 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,7 @@
 		CB1A44311E5E906D003706F2 /* TiffinService Backbone */ = {
 			isa = PBXGroup;
 			children = (
+				CB1A44761E62AF72003706F2 /* View */,
 				CB1A44711E6229EE003706F2 /* ViewController */,
 				CB1A44631E5EA14E003706F2 /* Model */,
 				CB1A44321E5E906D003706F2 /* AppDelegate.swift */,
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1A44641E5EA2BD003706F2 /* MenuItem.swift */,
+				CB1A44741E62A727003706F2 /* OrderPlaced.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -193,6 +199,14 @@
 				CB1A44721E623B08003706F2 /* MenuItemUpload.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		CB1A44761E62AF72003706F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB1A44771E62AF94003706F2 /* MenuItemCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,7 +496,9 @@
 			files = (
 				CB1A44701E6139C7003706F2 /* MenuInventoryVC.swift in Sources */,
 				CB1A44651E5EA2BD003706F2 /* MenuItem.swift in Sources */,
+				CB1A44781E62AF94003706F2 /* MenuItemCell.swift in Sources */,
 				CB1A44731E623B08003706F2 /* MenuItemUpload.swift in Sources */,
+				CB1A44751E62A727003706F2 /* OrderPlaced.swift in Sources */,
 				CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */,
 				CB1A443B1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld in Sources */,
 			);
