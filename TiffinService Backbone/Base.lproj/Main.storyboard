@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wXk-Az-iZq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +26,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Menu Item Upload-->
+        <scene sceneID="GeZ-jS-Svh">
+            <objects>
+                <viewController id="wXk-Az-iZq" customClass="MenuItemUpload" customModule="TiffinService_Backbone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fBM-37-pa6"/>
+                        <viewControllerLayoutGuide type="bottom" id="yeb-nk-Jbj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EWr-Z3-v1B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EPl-xx-79W">
+                                <rect key="frame" x="46" y="288" width="283" height="90"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gxl-2u-CBf">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksS-iS-Dug">
+                                        <rect key="frame" x="0.0" y="30" width="283" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffA-Az-55z">
+                                        <rect key="frame" x="0.0" y="60" width="283" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUN-AP-EzG">
+                                <rect key="frame" x="162" y="386" width="50" height="30"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadBtnPressedWithSender:" destination="wXk-Az-iZq" eventType="touchUpInside" id="ZB3-c5-BHm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rUN-AP-EzG" firstAttribute="centerX" secondItem="EWr-Z3-v1B" secondAttribute="centerX" id="5mI-JT-b03"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EPl-xx-79W" secondAttribute="trailing" constant="30" id="MmX-Yy-aub"/>
+                            <constraint firstItem="rUN-AP-EzG" firstAttribute="top" secondItem="EPl-xx-79W" secondAttribute="bottom" constant="8" id="Sm6-xg-gnf"/>
+                            <constraint firstItem="EPl-xx-79W" firstAttribute="centerY" secondItem="EWr-Z3-v1B" secondAttribute="centerY" id="klI-iz-cJX"/>
+                            <constraint firstItem="EPl-xx-79W" firstAttribute="leading" secondItem="EWr-Z3-v1B" secondAttribute="leadingMargin" constant="30" id="nfh-qI-LTh"/>
+                            <constraint firstItem="EPl-xx-79W" firstAttribute="centerX" secondItem="EWr-Z3-v1B" secondAttribute="centerX" id="wXs-G8-juU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ItemDescriptionField" destination="ksS-iS-Dug" id="ynX-y9-pYz"/>
+                        <outlet property="ItemNameField" destination="gxl-2u-CBf" id="UEi-R1-7Qq"/>
+                        <outlet property="ItemPriceField" destination="ffA-Az-55z" id="Gxt-1a-nuW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWN-A4-qmB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="33"/>
         </scene>
     </scenes>
 </document>
