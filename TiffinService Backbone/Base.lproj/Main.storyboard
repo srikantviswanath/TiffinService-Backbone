@@ -84,6 +84,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPG-eW-mx5">
                                         <rect key="frame" x="124" y="0.0" width="94" height="33"/>
                                         <state key="normal" title="Publish Menu"/>
+                                        <connections>
+                                            <action selector="publishMenuBtnClickedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HLT-26-62u"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -165,7 +168,7 @@
                         <outlet property="ItemDescriptionField" destination="ksS-iS-Dug" id="ynX-y9-pYz"/>
                         <outlet property="ItemNameField" destination="gxl-2u-CBf" id="UEi-R1-7Qq"/>
                         <outlet property="ItemPriceField" destination="ffA-Az-55z" id="Gxt-1a-nuW"/>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="NewItemTiInventory" id="JUA-H6-SHh"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="NewItemToInventory" id="JUA-H6-SHh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWN-A4-qmB" userLabel="First Responder" sceneMemberID="firstResponder"/>

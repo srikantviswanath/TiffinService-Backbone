@@ -29,7 +29,7 @@ class MenuItemUpload: UIViewController, UITextFieldDelegate {
                 price: Int(self.ItemPriceField.text!)!
             )
             newMenuItem.writeToDB() {
-                self.performSegue(withIdentifier: "NewItemTiInventory", sender: nil)
+                self.performSegue(withIdentifier: "NewItemToInventory", sender: nil)
             }
         }
     }

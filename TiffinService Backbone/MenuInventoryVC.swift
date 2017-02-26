@@ -28,6 +28,13 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         performSegue(withIdentifier: "InventoryToUpload", sender: nil)
     }
     
+    @IBAction func publishMenuBtnClicked(sender: UIButton) {
+        let publishedItems = PublishedMenu(publishDate: getCurrentDate(), menuItems: Array(self.inventoryList[1...4]))
+        publishedItems.writeToDB {
+            print("Items published")
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.inventoryList.count
     }

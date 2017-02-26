@@ -12,7 +12,7 @@ import ObjectMapper
 
 
 class MenuItem: Mappable {
-    static var REF = FIRDatabase.database().reference().child("MenuItems")
+    static var REF_INVENTORY = FIRDatabase.database().reference().child("MenuItems")
     var id: String!
     var name: String!
     var description: String!
@@ -35,7 +35,7 @@ class MenuItem: Mappable {
     
     static func getAll(before completion: @escaping ([MenuItem]) -> ()) {
         var menuItemsFetched = [MenuItem]()
-        REF.observeSingleEvent(of: .value, with: { menuItemsSS in
+        REF_INVENTORY.observeSingleEvent(of: .value, with: { menuItemsSS in
             if let jsonItems = menuItemsSS.children.allObjects as? [FIRDataSnapshot] {
                 for jsonItem in jsonItems {
                     let menuItem = Mapper<MenuItem>().map(JSON: jsonItem.value as! [String: Any])!
@@ -55,13 +55,37 @@ class MenuItem: Mappable {
     func writeToDB(is update:Bool=false, completed: @escaping ()->()) {
         let jsonItem = Mapper().toJSON(self)
         if !update {
-            let newMenuItemRef = MenuItem.REF.childByAutoId()
+            let newMenuItemRef = MenuItem.REF_INVENTORY.childByAutoId()
             self.id = newMenuItemRef.key
-            newMenuItemRef.updateChildValues(jsonItem) {_,_ in 
-                completed()
-            }
+            newMenuItemRef.updateChildValues(jsonItem) {_,_ in completed()}
         } else {
-            MenuItem.REF.child(self.id).updateChildValues(jsonItem)
+            MenuItem.REF_INVENTORY.child(self.id).updateChildValues(jsonItem) { _, _ in completed()}
         }
     }
+}
+
+class PublishedMenu {
+    
+    static var REF_PUBLISHED = FIRDatabase.database().reference().child("PublishedMenu")
+    static var REF_PUBLISHED_TODAY = PublishedMenu.REF_PUBLISHED.child(getCurrentDate()) //Replace it with current date string
+    var publishDate: String!
+    var menuItems: [MenuItem]!
+    
+    init(publishDate: String, menuItems: [MenuItem]) {
+        self.publishDate = publishDate
+        self.menuItems = menuItems
+    }
+    
+    /**
+     Method to write an instance of PublishedMenu to Firebase. It is always writen to today's date child node
+    */
+    func writeToDB(is update:Bool=false, completed: @escaping ()->()) {
+        var dataToWrite = [String: Any]()
+        for menuItem in self.menuItems {
+            dataToWrite[menuItem.id] = Mapper().toJSON(menuItem)
+        }
+        PublishedMenu.REF_PUBLISHED_TODAY.updateChildValues(dataToWrite) {_, _ in completed()}
+    }
+    
+    
 }
