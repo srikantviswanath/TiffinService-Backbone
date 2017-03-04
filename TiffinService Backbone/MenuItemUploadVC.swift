@@ -28,11 +28,12 @@ class MenuItemUpload: UIViewController, UITextFieldDelegate {
                 name: self.ItemNameField.text!, desc: self.ItemDescriptionField.text!,
                 price: Int(self.ItemPriceField.text!)!
             )
-            newMenuItem.writeToDB() {
+            MenuItemNetworker.writeToDB(menuItem: newMenuItem) {
                 self.performSegue(withIdentifier: "NewItemToInventory", sender: nil)
             }
         }
     }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -17,7 +17,7 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         inventoryTable.delegate = self
         inventoryTable.dataSource = self
-        MenuItem.getAll() { fetchedItems in
+        MenuItemNetworker.getAll() { fetchedItems in
             self.inventoryList = fetchedItems
             self.inventoryTable.reloadData()
         }
@@ -29,8 +29,8 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func publishMenuBtnClicked(sender: UIButton) {
-        let publishedItems = PublishedMenu(publishDate: getCurrentDate(), menuItems: Array(self.inventoryList[1...4]))
-        publishedItems.writeToDB {
+        let publishedMenu = PublishedMenu(publishDate: getCurrentDate(), menuItems: Array(self.inventoryList[3...6])) //Replace with vendoe selected menu
+        PublishedMenuNetworker.writeToDB(publishedMenu: publishedMenu) {
             print("Items published")
         }
     }
