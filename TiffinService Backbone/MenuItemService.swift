@@ -10,11 +10,11 @@ import Foundation
 import Firebase
 import ObjectMapper
 
-func parseMenuItemsSnapshot(menuItemsSS: FIRDataSnapshot) -> [MenuItem]{
-    var menuItemObjsFetched = [MenuItem]()
+func parseMenuItemsSnapshot(menuItemsSS: FIRDataSnapshot) -> [MenuInventoryItem]{
+    var menuItemObjsFetched = [MenuInventoryItem]()
     if let jsonItems = menuItemsSS.children.allObjects as? [FIRDataSnapshot] {
         for jsonItem in jsonItems {
-            let menuItem = Mapper<MenuItem>().map(JSON: jsonItem.value as! [String: Any])!
+            let menuItem = Mapper<MenuInventoryItem>().map(JSON: jsonItem.value as! [String: Any])!
             menuItem.id = jsonItem.key
             menuItemObjsFetched.append(menuItem)
         }
@@ -26,7 +26,7 @@ struct MenuItemNetworker {
     
     static var REF_INVENTORY = FIRDatabase.database().reference().child("MenuItems")
     
-    static func getAll(before completion: @escaping ([MenuItem]) -> ()) {
+    static func getAll(completion: @escaping ([MenuInventoryItem]) -> ()) {
         REF_INVENTORY.observeSingleEvent(of: .value, with: { menuItemsSS in
             let menuItemsFetched = parseMenuItemsSnapshot(menuItemsSS: menuItemsSS)
             completion(menuItemsFetched)
@@ -38,7 +38,7 @@ struct MenuItemNetworker {
      converting to JSON.
      :update: if set to true indicates updating a pre-existing node at Firebase
      */
-    static func writeToDB(menuItem: MenuItem, is update:Bool=false, completed: @escaping ()->()) {
+    static func writeToDB(menuItem: MenuInventoryItem, is update:Bool=false, completed: @escaping ()->()) {
         let jsonItem = Mapper().toJSON(menuItem)
         if !update {
             let newMenuItemRef = MenuItemNetworker.REF_INVENTORY.childByAutoId()

@@ -23,11 +23,14 @@
 		CB1A446B1E5EA9E3003706F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */; };
 		CB1A44701E6139C7003706F2 /* MenuInventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */; };
 		CB1A44731E623B08003706F2 /* MenuItemUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44721E623B08003706F2 /* MenuItemUploadVC.swift */; };
-		CB1A44751E62A727003706F2 /* OrderPlaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44741E62A727003706F2 /* OrderPlaced.swift */; };
+		CB1A44751E62A727003706F2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44741E62A727003706F2 /* OrderItem.swift */; };
 		CB1A44781E62AF94003706F2 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44771E62AF94003706F2 /* MenuItemCell.swift */; };
 		CB1A447B1E638865003706F2 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A447A1E638865003706F2 /* DateUtils.swift */; };
 		CB1A447F1E6518AD003706F2 /* MenuForClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A447E1E6518AD003706F2 /* MenuForClientVC.swift */; };
 		CB1A44821E651EFF003706F2 /* MenuItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44811E651EFF003706F2 /* MenuItemService.swift */; };
+		CBF10EAB1E6C8043003526F4 /* OrderItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EAA1E6C8043003526F4 /* OrderItemService.swift */; };
+		CBF10EAD1E6C8ECA003526F4 /* OrderConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EAC1E6C8ECA003526F4 /* OrderConfirmVC.swift */; };
+		CBF10EAF1E6C98E7003526F4 /* OrderConfirmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EAE1E6C98E7003526F4 /* OrderConfirmCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +76,14 @@
 		CB1A44681E5EA9E3003706F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuInventoryVC.swift; sourceTree = "<group>"; };
 		CB1A44721E623B08003706F2 /* MenuItemUploadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemUploadVC.swift; sourceTree = "<group>"; };
-		CB1A44741E62A727003706F2 /* OrderPlaced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderPlaced.swift; sourceTree = "<group>"; };
+		CB1A44741E62A727003706F2 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		CB1A44771E62AF94003706F2 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		CB1A447A1E638865003706F2 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		CB1A447E1E6518AD003706F2 /* MenuForClientVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuForClientVC.swift; sourceTree = "<group>"; };
 		CB1A44811E651EFF003706F2 /* MenuItemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemService.swift; sourceTree = "<group>"; };
+		CBF10EAA1E6C8043003526F4 /* OrderItemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItemService.swift; sourceTree = "<group>"; };
+		CBF10EAC1E6C8ECA003526F4 /* OrderConfirmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmVC.swift; sourceTree = "<group>"; };
+		CBF10EAE1E6C98E7003526F4 /* OrderConfirmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmCell.swift; sourceTree = "<group>"; };
 		D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,7 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1A44641E5EA2BD003706F2 /* MenuItem.swift */,
-				CB1A44741E62A727003706F2 /* OrderPlaced.swift */,
+				CB1A44741E62A727003706F2 /* OrderItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				CB1A446F1E6139C7003706F2 /* MenuInventoryVC.swift */,
 				CB1A44721E623B08003706F2 /* MenuItemUploadVC.swift */,
 				CB1A447E1E6518AD003706F2 /* MenuForClientVC.swift */,
+				CBF10EAC1E6C8ECA003526F4 /* OrderConfirmVC.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1A44771E62AF94003706F2 /* MenuItemCell.swift */,
+				CBF10EAE1E6C98E7003526F4 /* OrderConfirmCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1A44811E651EFF003706F2 /* MenuItemService.swift */,
+				CBF10EAA1E6C8043003526F4 /* OrderItemService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -521,10 +530,13 @@
 			files = (
 				CB1A44701E6139C7003706F2 /* MenuInventoryVC.swift in Sources */,
 				CB1A447B1E638865003706F2 /* DateUtils.swift in Sources */,
+				CBF10EAD1E6C8ECA003526F4 /* OrderConfirmVC.swift in Sources */,
+				CBF10EAB1E6C8043003526F4 /* OrderItemService.swift in Sources */,
+				CBF10EAF1E6C98E7003526F4 /* OrderConfirmCell.swift in Sources */,
 				CB1A44651E5EA2BD003706F2 /* MenuItem.swift in Sources */,
 				CB1A44781E62AF94003706F2 /* MenuItemCell.swift in Sources */,
 				CB1A44731E623B08003706F2 /* MenuItemUploadVC.swift in Sources */,
-				CB1A44751E62A727003706F2 /* OrderPlaced.swift in Sources */,
+				CB1A44751E62A727003706F2 /* OrderItem.swift in Sources */,
 				CB1A44821E651EFF003706F2 /* MenuItemService.swift in Sources */,
 				CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */,
 				CB1A447F1E6518AD003706F2 /* MenuForClientVC.swift in Sources */,

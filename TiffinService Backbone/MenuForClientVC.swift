@@ -11,16 +11,20 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBOutlet weak var menuTable: UITableView!
     
-    var menuList = [MenuItem]()
+    var menuList = [MenuInventoryItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
         menuTable.delegate = self
         menuTable.dataSource = self
-        PublishedMenuNetworker.getMenu() { publishedMenu in
+        PublishedMenu.networkDelegate.getMenu() { publishedMenu in
             self.menuList = publishedMenu.menuItems
             self.menuTable.reloadData()
         }
         
+    }
+    
+    @IBAction func SubmitOrder(sender: UIButton) {
+        performSegue(withIdentifier: "OrderConfirm", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +32,7 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = menuTable.dequeueReusableCell(withIdentifier: "MenuCell") as? MenuItemCell{
+        if let cell = menuTable.dequeueReusableCell(withIdentifier: "MenuItemForClient") as? MenuItemCell{
             cell.configureCell(menuItem: menuList[indexPath.row])
             return cell
         } else {
@@ -38,5 +42,17 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OrderConfirm" {
+            if let destVC = segue.destination as? OrderConfirmVC {
+                var orderItems = [OrderItem]()
+                for item in menuList {
+                    orderItems.append(OrderItem(menuItem: item, quantity: 2))
+                }
+                destVC.orderItemsList = orderItems
+            }
+        }
     }
 }

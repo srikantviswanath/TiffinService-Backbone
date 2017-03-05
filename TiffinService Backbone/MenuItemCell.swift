@@ -15,7 +15,7 @@ class MenuItemCell:  UITableViewCell{
     @IBOutlet weak var ItemDescription: UILabel!
     @IBOutlet weak var ItemPrice: UILabel!
     
-    func configureCell(menuItem: MenuItem){
+    func configureCell(menuItem: MenuInventoryItem){
         self.ItemName.text = menuItem.name
         self.ItemDescription.text = menuItem.description
         self.ItemPrice.text = "$" + "\(menuItem.price!)"

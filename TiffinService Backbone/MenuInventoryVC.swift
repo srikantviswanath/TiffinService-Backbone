@@ -12,12 +12,12 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     @IBOutlet weak var inventoryTable: UITableView!
     
-    var inventoryList = [MenuItem]()
+    var inventoryList = [MenuInventoryItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
         inventoryTable.delegate = self
         inventoryTable.dataSource = self
-        MenuItemNetworker.getAll() { fetchedItems in
+        MenuInventoryItem.networkDelegate.getAll() { fetchedItems in
             self.inventoryList = fetchedItems
             self.inventoryTable.reloadData()
         }

@@ -24,7 +24,7 @@ class MenuItemUpload: UIViewController, UITextFieldDelegate {
     
     @IBAction func uploadBtnPressed(sender: UIButton) {
         if (self.ItemNameField.text != "") && (self.ItemPriceField.text != "") && (self.ItemDescriptionField.text != "") {
-            let newMenuItem = MenuItem(
+            let newMenuItem = MenuInventoryItem(
                 name: self.ItemNameField.text!, desc: self.ItemDescriptionField.text!,
                 price: Int(self.ItemPriceField.text!)!
             )

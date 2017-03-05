@@ -11,13 +11,16 @@ import Firebase
 import ObjectMapper
 
 
-class MenuItem: Mappable {
+class MenuInventoryItem: Mappable {
+    
+    static var networkDelegate = MenuItemNetworker.self
+    
     var id: String!
     var name: String!
     var description: String!
     var price: Int!
     
-   init(name: String, desc: String, price: Int) {
+    init(name: String, desc: String, price: Int) {
 
         self.name = name
         self.description = desc
@@ -35,10 +38,12 @@ class MenuItem: Mappable {
 
 class PublishedMenu {
     
-    var publishDate: String!
-    var menuItems: [MenuItem]!
+    static var networkDelegate = PublishedMenuNetworker.self
     
-    init(publishDate: String, menuItems: [MenuItem]) {
+    var publishDate: String!
+    var menuItems: [MenuInventoryItem]!
+    
+    init(publishDate: String, menuItems: [MenuInventoryItem]) {
         self.publishDate = publishDate
         self.menuItems = menuItems
     }
