@@ -15,7 +15,7 @@ func parseMenuItemsSnapshot(menuItemsSS: FIRDataSnapshot) -> [MenuInventoryItem]
     if let jsonItems = menuItemsSS.children.allObjects as? [FIRDataSnapshot] {
         for jsonItem in jsonItems {
             let menuItem = Mapper<MenuInventoryItem>().map(JSON: jsonItem.value as! [String: Any])!
-            menuItem.id = jsonItem.key
+            menuItem.itemID = jsonItem.key
             menuItemObjsFetched.append(menuItem)
         }
     }
@@ -42,10 +42,10 @@ struct MenuItemNetworker {
         let jsonItem = Mapper().toJSON(menuItem)
         if !update {
             let newMenuItemRef = MenuItemNetworker.REF_INVENTORY.childByAutoId()
-            menuItem.id = newMenuItemRef.key
+            menuItem.itemID = newMenuItemRef.key
             newMenuItemRef.updateChildValues(jsonItem) {_,_ in completed()}
         } else {
-            REF_INVENTORY.child(menuItem.id).updateChildValues(jsonItem) { _, _ in completed()}
+            REF_INVENTORY.child(menuItem.itemID).updateChildValues(jsonItem) { _, _ in completed()}
         }
     }
 
@@ -70,7 +70,7 @@ struct PublishedMenuNetworker {
     static func writeToDB(publishedMenu: PublishedMenu, is update:Bool=false, completed: @escaping ()->()) {
         var dataToWrite = [String: Any]()
         for menuItem in publishedMenu.menuItems {
-            dataToWrite[menuItem.id] = Mapper().toJSON(menuItem)
+            dataToWrite[menuItem.itemID] = Mapper().toJSON(menuItem)
         }
         REF_PUBLISHED_TODAY.updateChildValues(dataToWrite) {_, _ in completed()}
     }

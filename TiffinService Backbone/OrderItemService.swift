@@ -24,7 +24,7 @@ struct OrderNetworker {
         var ordersPlaced = [String: Any]()
         for orderItem in order.orderItems {
             let orderItemJSON = Mapper().toJSON(orderItem)
-            ordersPlaced[orderItem.inventoryId] = orderItemJSON
+            ordersPlaced[orderItem.itemID] = orderItemJSON
         }
         var orderJSON = Mapper().toJSON(order)
         orderJSON["ItemsOrdered"] = ordersPlaced

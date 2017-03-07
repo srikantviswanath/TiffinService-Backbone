@@ -21,7 +21,7 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func OrderPlacedBtnPressed(sneder: UIButton) {
-        let order = Order(userId: "userId101", userName: "PullaRao, J", orderTime: "10:30 AM", orderItems: orderItemsList)
+        let order = Order(userId: "userId102", userName: "PullaRao, J", orderTime: "10:30 AM", orderItems: orderItemsList)
         OrderNetworker.writeToDB(order: order) {
             print("Order Placed")
         }
