@@ -32,6 +32,7 @@
 		CBF10EAD1E6C8ECA003526F4 /* OrderConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EAC1E6C8ECA003526F4 /* OrderConfirmVC.swift */; };
 		CBF10EAF1E6C98E7003526F4 /* OrderConfirmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EAE1E6C98E7003526F4 /* OrderConfirmCell.swift */; };
 		CBF10EB11E6E4DAC003526F4 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EB01E6E4DAC003526F4 /* BaseModel.swift */; };
+		CBF10EB31E6E6CB9003526F4 /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EB21E6E6CB9003526F4 /* TimeUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		CBF10EAC1E6C8ECA003526F4 /* OrderConfirmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmVC.swift; sourceTree = "<group>"; };
 		CBF10EAE1E6C98E7003526F4 /* OrderConfirmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmCell.swift; sourceTree = "<group>"; };
 		CBF10EB01E6E4DAC003526F4 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		CBF10EB21E6E6CB9003526F4 /* TimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1A447A1E638865003706F2 /* DateUtils.swift */,
+				CBF10EB21E6E6CB9003526F4 /* TimeUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				CBF10EAD1E6C8ECA003526F4 /* OrderConfirmVC.swift in Sources */,
 				CBF10EAB1E6C8043003526F4 /* OrderItemService.swift in Sources */,
 				CBF10EAF1E6C98E7003526F4 /* OrderConfirmCell.swift in Sources */,
+				CBF10EB31E6E6CB9003526F4 /* TimeUtils.swift in Sources */,
 				CB1A44651E5EA2BD003706F2 /* MenuItem.swift in Sources */,
 				CB1A44781E62AF94003706F2 /* MenuItemCell.swift in Sources */,
 				CB1A44731E623B08003706F2 /* MenuItemUploadVC.swift in Sources */,
