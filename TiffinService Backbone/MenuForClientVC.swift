@@ -11,13 +11,13 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBOutlet weak var menuTable: UITableView!
     
-    var menuList = [MenuInventoryItem]()
+    var menuList = [MenuInventoryVM]()
     override func viewDidLoad() {
         super.viewDidLoad()
         menuTable.delegate = self
         menuTable.dataSource = self
-        PublishedMenu.networkDelegate.getMenu() { publishedMenu in
-            self.menuList = publishedMenu.menuItems
+        PublishedMenuVM.getMenu() { publishedMenuVM in
+            self.menuList = publishedMenuVM.containees
             self.menuTable.reloadData()
         }
         
@@ -33,7 +33,7 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = menuTable.dequeueReusableCell(withIdentifier: "MenuItemForClient") as? MenuItemCell{
-            cell.configureCell(menuItem: menuList[indexPath.row])
+            cell.configureCell(menuItemVM: menuList[indexPath.row])
             return cell
         } else {
             return UITableViewCell()
@@ -44,7 +44,7 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return 1
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OrderConfirm" {
             if let destVC = segue.destination as? OrderConfirmVC {
                 var orderItems = [OrderItem]()
@@ -54,5 +54,5 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 destVC.orderItemsList = orderItems
             }
         }
-    }
+    }*/
 }

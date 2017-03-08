@@ -41,8 +41,7 @@ struct MenuItemNetworker {
     static func writeToDB(menuItem: MenuInventoryItem, is update:Bool=false, completed: @escaping ()->()) {
         let jsonItem = Mapper().toJSON(menuItem)
         if !update {
-            let newMenuItemRef = MenuItemNetworker.REF_INVENTORY.childByAutoId()
-            menuItem.itemID = newMenuItemRef.key
+            let newMenuItemRef = REF_INVENTORY.childByAutoId()
             newMenuItemRef.updateChildValues(jsonItem) {_,_ in completed()}
         } else {
             REF_INVENTORY.child(menuItem.itemID).updateChildValues(jsonItem) { _, _ in completed()}

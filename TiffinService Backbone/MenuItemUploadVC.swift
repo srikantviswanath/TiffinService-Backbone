@@ -24,11 +24,11 @@ class MenuItemUpload: UIViewController, UITextFieldDelegate {
     
     @IBAction func uploadBtnPressed(sender: UIButton) {
         if (self.ItemNameField.text != "") && (self.ItemPriceField.text != "") && (self.ItemDescriptionField.text != "") {
-            let newMenuItem = MenuInventoryItem(
-                name: self.ItemNameField.text!, desc: self.ItemDescriptionField.text!,
-                price: Int(self.ItemPriceField.text!)!
+            let newMenuItem = MenuInventoryVM(
+                name: self.ItemNameField.text!, price: Int(self.ItemPriceField.text!)!,
+                description: self.ItemDescriptionField.text!
             )
-            MenuItemNetworker.writeToDB(menuItem: newMenuItem) {
+            newMenuItem.writeToDB() {
                 self.performSegue(withIdentifier: "NewItemToInventory", sender: nil)
             }
         }

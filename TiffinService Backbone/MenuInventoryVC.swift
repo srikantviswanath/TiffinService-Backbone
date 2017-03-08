@@ -12,13 +12,13 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     @IBOutlet weak var inventoryTable: UITableView!
     
-    var inventoryList = [MenuInventoryItem]()
+    var inventoryList = [MenuInventoryVM]()
     override func viewDidLoad() {
         super.viewDidLoad()
         inventoryTable.delegate = self
         inventoryTable.dataSource = self
-        MenuInventoryItem.networkDelegate.getAll() { fetchedItems in
-            self.inventoryList = fetchedItems
+        MenuInventoryVM.getAll() { fetchedItemVMs in
+            self.inventoryList = fetchedItemVMs
             self.inventoryTable.reloadData()
         }
 
@@ -29,8 +29,8 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func publishMenuBtnClicked(sender: UIButton) {
-        let publishedMenu = PublishedMenu(publishDate: getCurrentDate(), menuItems: Array(self.inventoryList[3...6])) //Replace with vendoe selected menu
-        PublishedMenuNetworker.writeToDB(publishedMenu: publishedMenu) {
+        let publishedMenuVM = PublishedMenuVM(pubDate: getCurrentDate(), menuItemVMs: Array(self.inventoryList[2...5])) //Replace with vendor selected menu
+        publishedMenuVM.writeToDB() {
             print("Items published")
         }
     }
@@ -41,7 +41,7 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = inventoryTable.dequeueReusableCell(withIdentifier: "MenuItemCell") as? MenuItemCell{
-            cell.configureCell(menuItem: inventoryList[indexPath.row])
+            cell.configureCell(menuItemVM: inventoryList[indexPath.row])
             return cell
         } else {
             return UITableViewCell()

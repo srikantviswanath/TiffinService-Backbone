@@ -33,6 +33,7 @@
 		CBF10EAF1E6C98E7003526F4 /* OrderConfirmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EAE1E6C98E7003526F4 /* OrderConfirmCell.swift */; };
 		CBF10EB11E6E4DAC003526F4 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EB01E6E4DAC003526F4 /* BaseModel.swift */; };
 		CBF10EB31E6E6CB9003526F4 /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EB21E6E6CB9003526F4 /* TimeUtils.swift */; };
+		CBF10EB61E6E6DBA003526F4 /* MenuInventoryItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10EB51E6E6DBA003526F4 /* MenuInventoryItemVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		CBF10EAE1E6C98E7003526F4 /* OrderConfirmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmCell.swift; sourceTree = "<group>"; };
 		CBF10EB01E6E4DAC003526F4 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		CBF10EB21E6E6CB9003526F4 /* TimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
+		CBF10EB51E6E6DBA003526F4 /* MenuInventoryItemVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuInventoryItemVM.swift; sourceTree = "<group>"; };
 		D96FED3096EA96B9BC5BBF3F /* Pods-TiffinService BackboneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneUITests/Pods-TiffinService BackboneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 		CB1A44311E5E906D003706F2 /* TiffinService Backbone */ = {
 			isa = PBXGroup;
 			children = (
+				CBF10EB41E6E6D81003526F4 /* ViewModel */,
 				CB1A44801E651EDB003706F2 /* Service */,
 				CB1A44791E6387E7003706F2 /* Utils */,
 				CB1A44761E62AF72003706F2 /* View */,
@@ -247,6 +250,14 @@
 				CBF10EAA1E6C8043003526F4 /* OrderItemService.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		CBF10EB41E6E6D81003526F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBF10EB51E6E6DBA003526F4 /* MenuInventoryItemVM.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,6 +547,7 @@
 			files = (
 				CB1A44701E6139C7003706F2 /* MenuInventoryVC.swift in Sources */,
 				CB1A447B1E638865003706F2 /* DateUtils.swift in Sources */,
+				CBF10EB61E6E6DBA003526F4 /* MenuInventoryItemVM.swift in Sources */,
 				CBF10EB11E6E4DAC003526F4 /* BaseModel.swift in Sources */,
 				CBF10EAD1E6C8ECA003526F4 /* OrderConfirmVC.swift in Sources */,
 				CBF10EAB1E6C8043003526F4 /* OrderItemService.swift in Sources */,
