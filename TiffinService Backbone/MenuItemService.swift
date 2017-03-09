@@ -68,7 +68,7 @@ struct PublishedMenuNetworker {
      */
     static func writeToDB(publishedMenu: PublishedMenu, is update:Bool=false, completed: @escaping ()->()) {
         var dataToWrite = [String: Any]()
-        for menuItem in publishedMenu.menuItems {
+        for menuItem in publishedMenu.containees {
             dataToWrite[menuItem.itemID] = Mapper().toJSON(menuItem)
         }
         REF_PUBLISHED_TODAY.updateChildValues(dataToWrite) {_, _ in completed()}

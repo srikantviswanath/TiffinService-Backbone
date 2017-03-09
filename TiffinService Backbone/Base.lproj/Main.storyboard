@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bZc-iX-hEL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -123,15 +123,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-pd-cpS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-pd-cpS">
                                 <rect key="frame" x="16" y="50" width="343" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemForClient" rowHeight="79" id="lRC-pY-7HD" customClass="MenuItemCell" customModule="TiffinService_Backbone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="79"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemForClient" rowHeight="123" id="lRC-pY-7HD" customClass="MenuItemCell" customModule="TiffinService_Backbone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lRC-pY-7HD" id="o49-iZ-GWa">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-av-ozX">
@@ -141,7 +141,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNI-T5-cEh">
-                                                    <rect key="frame" x="8" y="53" width="35.5" height="17"/>
+                                                    <rect key="frame" x="8" y="44" width="35.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -152,20 +152,38 @@
                                                     <color key="textColor" red="0.95294117649999999" green="0.24112482330000001" blue="0.23177199570000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6w4-Nn-xHn">
+                                                    <rect key="frame" x="124.5" y="65.5" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="QtyStepperPressedWithSender:" destination="lRC-pY-7HD" eventType="touchUpInside" id="ukD-Gj-A7e"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzD-GJ-w09">
+                                                    <rect key="frame" x="157.5" y="99.5" width="28" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6tL-av-ozX" firstAttribute="leading" secondItem="o49-iZ-GWa" secondAttribute="leadingMargin" id="1Fv-oA-77k"/>
                                                 <constraint firstItem="pyH-od-kOb" firstAttribute="top" secondItem="o49-iZ-GWa" secondAttribute="topMargin" id="3tI-lH-PCk"/>
-                                                <constraint firstItem="BNI-T5-cEh" firstAttribute="bottom" secondItem="o49-iZ-GWa" secondAttribute="bottomMargin" id="dgb-bh-VPG"/>
+                                                <constraint firstItem="6w4-Nn-xHn" firstAttribute="centerX" secondItem="o49-iZ-GWa" secondAttribute="centerX" id="B84-eD-mjt"/>
+                                                <constraint firstItem="BNI-T5-cEh" firstAttribute="top" secondItem="6tL-av-ozX" secondAttribute="bottom" constant="15" id="Lmw-rk-o6d"/>
+                                                <constraint firstItem="SzD-GJ-w09" firstAttribute="centerX" secondItem="o49-iZ-GWa" secondAttribute="centerX" id="QY9-lH-pT2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6w4-Nn-xHn" secondAttribute="bottom" constant="20" id="ecH-xL-rbM"/>
                                                 <constraint firstItem="BNI-T5-cEh" firstAttribute="leading" secondItem="o49-iZ-GWa" secondAttribute="leadingMargin" id="j9p-bN-4gC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pyH-od-kOb" secondAttribute="trailing" id="jv9-1u-td0"/>
                                                 <constraint firstItem="6tL-av-ozX" firstAttribute="top" secondItem="o49-iZ-GWa" secondAttribute="topMargin" id="lro-VZ-190"/>
+                                                <constraint firstItem="SzD-GJ-w09" firstAttribute="top" secondItem="6w4-Nn-xHn" secondAttribute="bottom" constant="5" id="naC-pV-GNl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ItemDescription" destination="BNI-T5-cEh" id="uzu-mt-nS5"/>
                                             <outlet property="ItemName" destination="6tL-av-ozX" id="En5-2k-6Jd"/>
                                             <outlet property="ItemPrice" destination="pyH-od-kOb" id="ORg-WP-cwA"/>
+                                            <outlet property="QtyOrdered" destination="SzD-GJ-w09" id="LLE-Cz-ecC"/>
+                                            <outlet property="QtyStepper" destination="6w4-Nn-xHn" id="EGa-6q-JB9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

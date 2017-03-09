@@ -29,7 +29,7 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func publishMenuBtnClicked(sender: UIButton) {
-        let publishedMenuVM = PublishedMenuVM(pubDate: getCurrentDate(), menuItemVMs: Array(self.inventoryList[2...5])) //Replace with vendor selected menu
+        let publishedMenuVM = PublishedMenuVM(pubDate: getCurrentDate(), menuItemVMs: Array(self.inventoryList[2...8])) //Replace with vendor selected menu
         publishedMenuVM.writeToDB() {
             print("Items published")
         }

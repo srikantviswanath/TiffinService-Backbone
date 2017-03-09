@@ -44,15 +44,15 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return 1
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OrderConfirm" {
             if let destVC = segue.destination as? OrderConfirmVC {
-                var orderItems = [OrderItem]()
+                var orderItems = [OrderItemVM]()
                 for item in menuList {
-                    orderItems.append(OrderItem(menuItem: item, quantity: 2))
+                    orderItems.append(OrderItemVM(menuItemVM: item, quantity: 2))
                 }
-                destVC.orderItemsList = orderItems
+                destVC.orderItemVMsList = orderItems
             }
         }
-    }*/
+    }
 }

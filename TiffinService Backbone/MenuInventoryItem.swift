@@ -13,8 +13,6 @@ import ObjectMapper
 
 class MenuInventoryItem: MenuItemCore, Mappable {
     
-    static var networkDelegate = MenuItemNetworker.self
-    
     var description: String!
     
     init(name: String, desc: String, price: Int) {
@@ -35,13 +33,11 @@ class MenuInventoryItem: MenuItemCore, Mappable {
 
 class PublishedMenu {
     
-    static var networkDelegate = PublishedMenuNetworker.self
-    
     var publishDate: String!
-    var containees: [MenuInventoryItem]!
+    var menuItems: [MenuInventoryItem]!
     
     init(publishDate: String, menuItems: [MenuInventoryItem]) {
         self.publishDate = publishDate
-        self.containees = menuItems
+        self.menuItems = menuItems
     }
 }

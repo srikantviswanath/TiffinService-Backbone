@@ -14,6 +14,12 @@ class MenuItemCell:  UITableViewCell{
     @IBOutlet weak var ItemName: UILabel!
     @IBOutlet weak var ItemDescription: UILabel!
     @IBOutlet weak var ItemPrice: UILabel!
+    @IBOutlet weak var QtyOrdered: UILabel!
+    @IBOutlet weak var QtyStepper: UIStepper!
+    
+    @IBAction func QtyStepperPressed(sender: UIStepper) {
+        self.QtyOrdered.text = QtyStepper.value.description
+    }
     
     func configureCell(menuItemVM: MenuInventoryVM){
         self.ItemName.text = menuItemVM.name

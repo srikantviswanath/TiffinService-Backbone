@@ -12,7 +12,7 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var orderConfirmTable: UITableView!
     
-    var orderItemsList: [OrderItem]!
+    var orderItemVMsList: [OrderItemVM]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,8 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func OrderPlacedBtnPressed(sneder: UIButton) {
-        let order = Order(userId: "userId103", userName: "JaggaRao, M", orderTime: getCurrentTime(), orderItems: orderItemsList)
-        OrderNetworker.writeToDB(order: order) {
+        let orderVM = OrderVM(userId: "userId103", userName: "JaggaRao, M", orderTime: getCurrentTime(), orderItemVMs: orderItemVMsList)
+        orderVM.writeToDB {
             print("Order Placed")
         }
     }
@@ -32,12 +32,12 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orderItemsList.count
+        return orderItemVMsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = orderConfirmTable.dequeueReusableCell(withIdentifier: "OrderConfirmCell") as? OrderConfirmCell{
-            cell.configureCell(orderItem: orderItemsList[indexPath.row])
+            cell.configureCell(orderItemVM: orderItemVMsList[indexPath.row])
             return cell
         } else {
             return UITableViewCell()

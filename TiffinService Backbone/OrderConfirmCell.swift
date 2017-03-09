@@ -16,11 +16,11 @@ class OrderConfirmCell : UITableViewCell {
     @IBOutlet weak var Quantity: UILabel!
     @IBOutlet weak var ItemTotal: UILabel!
     
-    func configureCell(orderItem: OrderItem){
-        self.ItemName.text = orderItem.name
-        self.UnitPrice.text = "Unit Price: " + "$" + "\(orderItem.price!)"
-        self.Quantity.text = "Qty: " + "\(orderItem.quantity!)"
-        self.ItemTotal.text = "Item Total: " + "$" + "\(orderItem.price! * orderItem.quantity!)"
+    func configureCell(orderItemVM: OrderItemVM){
+        self.ItemName.text = orderItemVM.name
+        self.UnitPrice.text = orderItemVM.price
+        self.Quantity.text = orderItemVM.quantity
+        self.ItemTotal.text = orderItemVM.itemTotal
     }
 
 }

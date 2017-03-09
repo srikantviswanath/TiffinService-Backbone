@@ -22,7 +22,7 @@ struct OrderNetworker {
     static func writeToDB(order: Order, completed: @escaping () -> ()) {
         var dataToWrite = [String: Any]()
         var ordersPlaced = [String: Any]()
-        for orderItem in order.orderItems {
+        for orderItem in order.containees {
             let orderItemJSON = Mapper().toJSON(orderItem)
             ordersPlaced[orderItem.itemID] = orderItemJSON
         }
