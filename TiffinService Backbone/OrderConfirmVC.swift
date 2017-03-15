@@ -37,7 +37,9 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = orderConfirmTable.dequeueReusableCell(withIdentifier: "OrderConfirmCell") as? OrderConfirmCell{
-            cell.configureCell(orderItemVM: orderItemVMsList[indexPath.row])
+            let viewModel = orderItemVMsList[indexPath.row]
+            cell.viewModelDelegate = viewModel
+            cell.configureCell(orderItemVM: viewModel)
             return cell
         } else {
             return UITableViewCell()

@@ -49,7 +49,7 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
             if let destVC = segue.destination as? OrderConfirmVC {
                 var orderItems = [OrderItemVM]()
                 for item in menuList {
-                    orderItems.append(OrderItemVM(menuItemVM: item, quantity: 2))
+                    orderItems.append(OrderItemVM(menuItemVM: item, quantity: 0))
                 }
                 destVC.orderItemVMsList = orderItems
             }

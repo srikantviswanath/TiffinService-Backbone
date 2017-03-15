@@ -152,38 +152,20 @@
                                                     <color key="textColor" red="0.95294117649999999" green="0.24112482330000001" blue="0.23177199570000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6w4-Nn-xHn">
-                                                    <rect key="frame" x="124.5" y="65.5" width="94" height="29"/>
-                                                    <connections>
-                                                        <action selector="QtyStepperPressedWithSender:" destination="lRC-pY-7HD" eventType="touchUpInside" id="ukD-Gj-A7e"/>
-                                                    </connections>
-                                                </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzD-GJ-w09">
-                                                    <rect key="frame" x="157.5" y="99.5" width="28" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6tL-av-ozX" firstAttribute="leading" secondItem="o49-iZ-GWa" secondAttribute="leadingMargin" id="1Fv-oA-77k"/>
                                                 <constraint firstItem="pyH-od-kOb" firstAttribute="top" secondItem="o49-iZ-GWa" secondAttribute="topMargin" id="3tI-lH-PCk"/>
-                                                <constraint firstItem="6w4-Nn-xHn" firstAttribute="centerX" secondItem="o49-iZ-GWa" secondAttribute="centerX" id="B84-eD-mjt"/>
                                                 <constraint firstItem="BNI-T5-cEh" firstAttribute="top" secondItem="6tL-av-ozX" secondAttribute="bottom" constant="15" id="Lmw-rk-o6d"/>
-                                                <constraint firstItem="SzD-GJ-w09" firstAttribute="centerX" secondItem="o49-iZ-GWa" secondAttribute="centerX" id="QY9-lH-pT2"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="6w4-Nn-xHn" secondAttribute="bottom" constant="20" id="ecH-xL-rbM"/>
                                                 <constraint firstItem="BNI-T5-cEh" firstAttribute="leading" secondItem="o49-iZ-GWa" secondAttribute="leadingMargin" id="j9p-bN-4gC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pyH-od-kOb" secondAttribute="trailing" id="jv9-1u-td0"/>
                                                 <constraint firstItem="6tL-av-ozX" firstAttribute="top" secondItem="o49-iZ-GWa" secondAttribute="topMargin" id="lro-VZ-190"/>
-                                                <constraint firstItem="SzD-GJ-w09" firstAttribute="top" secondItem="6w4-Nn-xHn" secondAttribute="bottom" constant="5" id="naC-pV-GNl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ItemDescription" destination="BNI-T5-cEh" id="uzu-mt-nS5"/>
-                                            <outlet property="ItemName" destination="6tL-av-ozX" id="En5-2k-6Jd"/>
-                                            <outlet property="ItemPrice" destination="pyH-od-kOb" id="ORg-WP-cwA"/>
-                                            <outlet property="QtyOrdered" destination="SzD-GJ-w09" id="LLE-Cz-ecC"/>
-                                            <outlet property="QtyStepper" destination="6w4-Nn-xHn" id="EGa-6q-JB9"/>
+                                            <outlet property="ItemDescription" destination="BNI-T5-cEh" id="u9G-gM-dqH"/>
+                                            <outlet property="ItemName" destination="6tL-av-ozX" id="MQh-e7-O1P"/>
+                                            <outlet property="ItemPrice" destination="pyH-od-kOb" id="Fps-l8-6h5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -271,22 +253,31 @@
                                                     <color key="textColor" red="0.95294117649999999" green="0.24112482330000001" blue="0.23177199570000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rLk-aZ-Fpd">
+                                                    <rect key="frame" x="120" y="56" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="QtyStepperPressedWithSender:" destination="8Uc-JP-cWO" eventType="touchUpInside" id="AEH-pB-Mqm"/>
+                                                    </connections>
+                                                </stepper>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Vyl-bW-k2S" firstAttribute="top" secondItem="5pq-6e-1Lb" secondAttribute="topMargin" id="2xn-xF-n8k"/>
                                                 <constraint firstItem="Vyl-bW-k2S" firstAttribute="leading" secondItem="5pq-6e-1Lb" secondAttribute="leadingMargin" id="6QI-rj-edU"/>
                                                 <constraint firstItem="N8i-q7-Rhw" firstAttribute="leading" secondItem="5pq-6e-1Lb" secondAttribute="leadingMargin" id="FsU-GP-JGq"/>
                                                 <constraint firstItem="V4B-cH-mOH" firstAttribute="top" secondItem="5pq-6e-1Lb" secondAttribute="topMargin" id="Gwo-nd-qC0"/>
+                                                <constraint firstAttribute="bottom" secondItem="rLk-aZ-Fpd" secondAttribute="bottom" constant="5" id="Sxr-U3-gZ8"/>
                                                 <constraint firstItem="U80-xz-mZA" firstAttribute="leading" secondItem="5pq-6e-1Lb" secondAttribute="leadingMargin" id="cGT-gO-Uip"/>
                                                 <constraint firstItem="U80-xz-mZA" firstAttribute="top" secondItem="N8i-q7-Rhw" secondAttribute="bottom" constant="5" id="fku-BN-rsZ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="V4B-cH-mOH" secondAttribute="trailing" id="ihP-C5-P1x"/>
                                                 <constraint firstItem="N8i-q7-Rhw" firstAttribute="top" secondItem="Vyl-bW-k2S" secondAttribute="bottom" constant="5" id="qfI-fb-Yr7"/>
+                                                <constraint firstItem="rLk-aZ-Fpd" firstAttribute="centerX" secondItem="5pq-6e-1Lb" secondAttribute="centerX" id="vzk-TM-o0Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ItemName" destination="Vyl-bW-k2S" id="PsW-EC-QSi"/>
                                             <outlet property="ItemTotal" destination="V4B-cH-mOH" id="zPd-jW-G0o"/>
-                                            <outlet property="Quantity" destination="N8i-q7-Rhw" id="lbH-f9-E9i"/>
+                                            <outlet property="QtyOrdered" destination="N8i-q7-Rhw" id="rmZ-U9-61b"/>
+                                            <outlet property="QtyStepper" destination="rLk-aZ-Fpd" id="Cpz-3C-PrY"/>
                                             <outlet property="UnitPrice" destination="U80-xz-mZA" id="4iR-7G-Y3o"/>
                                         </connections>
                                     </tableViewCell>

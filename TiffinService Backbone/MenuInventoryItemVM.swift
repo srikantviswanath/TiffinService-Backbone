@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MenuInventoryVM {
+class MenuInventoryVM {
     
     static var networkDecorator = MenuItemNetworker.self
     
@@ -51,7 +51,7 @@ struct MenuInventoryVM {
     }
 }
 
-struct PublishedMenuVM {
+class PublishedMenuVM {
     
     static var networkDecorator = PublishedMenuNetworker.self
     

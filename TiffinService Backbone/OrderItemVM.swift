@@ -8,13 +8,21 @@
 
 import Foundation
 
-struct OrderItemVM {
+class OrderItemVM {
     
     var model: OrderItem!
     var itemID: String!
     var name: String!
     var price: String!
-    var quantity: String!
+    var quantity: String! {
+        get {
+            return "\(model.quantity!)"
+        }
+        // This means that self.model must already be inittialized by the time quantity is set :(. How to make sure?
+        set(newQty) {
+            self.model.quantity = Int(newQty)!
+        }
+    }
     var instructions: String!
     var itemTotal: String {
         return "$" + "\(self.model.price * self.model.quantity)"
@@ -32,16 +40,16 @@ struct OrderItemVM {
     
     
     init(menuItemVM: MenuInventoryVM, quantity: Int, instructions: String = "") {
+        self.model = OrderItem(menuItem: menuItemVM.model, quantity: quantity)
         self.itemID = menuItemVM.itemID
         self.name = menuItemVM.name
         self.price = menuItemVM.price
         self.quantity = "\(quantity)"
         self.instructions = instructions
-        self.model = OrderItem(menuItem: menuItemVM.model, quantity: quantity)
     }
 }
 
-struct OrderVM {
+class OrderVM {
     
     static var networkDelegate = OrderNetworker.self
     
