@@ -19,6 +19,7 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         orderConfirmTable.delegate = self
         orderConfirmTable.dataSource = self
+        self.orderTotalLbl.text = "$0"
     }
     
     @IBAction func OrderPlacedBtnPressed(sneder: UIButton) {

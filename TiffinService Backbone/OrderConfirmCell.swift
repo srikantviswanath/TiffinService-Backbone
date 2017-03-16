@@ -24,7 +24,7 @@ class OrderConfirmCell : UITableViewCell {
         self.QtyOrdered.text = Int(QtyStepper.value).description
         self.viewModelDelegate.quantity = self.QtyOrdered.text!
         self.ItemTotal.text = self.viewModelDelegate.itemTotal
-        self.viewControllerDelegate.orderTotalLbl.text = "\(Int(String(UnitPrice.text!.characters.dropFirst()))! + Int(viewControllerDelegate.orderTotalLbl.text!)!)"
+        self.viewControllerDelegate.orderTotalLbl.text = "$" + "\(Int(String(UnitPrice.text!.characters.dropFirst()))! + Int(String(viewControllerDelegate.orderTotalLbl.text!.characters.dropFirst()))!)"
     }
 
     
