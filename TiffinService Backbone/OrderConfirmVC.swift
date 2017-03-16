@@ -11,6 +11,7 @@ import UIKit
 class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var orderConfirmTable: UITableView!
+    @IBOutlet weak var orderTotalLbl: UILabel!
     
     var orderItemVMsList: [OrderItemVM]!
     
@@ -38,6 +39,7 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = orderConfirmTable.dequeueReusableCell(withIdentifier: "OrderConfirmCell") as? OrderConfirmCell{
             let viewModel = orderItemVMsList[indexPath.row]
+            cell.viewControllerDelegate = self
             cell.viewModelDelegate = viewModel
             cell.configureCell(orderItemVM: viewModel)
             return cell

@@ -18,11 +18,13 @@ class OrderConfirmCell : UITableViewCell {
     @IBOutlet weak var QtyStepper: UIStepper!
     
     var viewModelDelegate: OrderItemVM!
+    var viewControllerDelegate: OrderConfirmVC!
     
     @IBAction func QtyStepperPressed(sender: UIStepper) {
         self.QtyOrdered.text = Int(QtyStepper.value).description
         self.viewModelDelegate.quantity = self.QtyOrdered.text!
         self.ItemTotal.text = self.viewModelDelegate.itemTotal
+        self.viewControllerDelegate.orderTotalLbl.text = "\(Int(String(UnitPrice.text!.characters.dropFirst()))! + Int(viewControllerDelegate.orderTotalLbl.text!)!)"
     }
 
     
