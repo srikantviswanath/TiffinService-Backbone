@@ -20,11 +20,14 @@ class OrderConfirmCell : UITableViewCell {
     var viewModelDelegate: OrderItemVM!
     var viewControllerDelegate: OrderConfirmVC!
     
+    var preStepperQty: Int!
+    
     @IBAction func QtyStepperPressed(sender: UIStepper) {
-        self.QtyOrdered.text = Int(QtyStepper.value).description
+        let newQty = Int(QtyStepper.value).description
+        self.QtyOrdered.text = newQty
         self.viewModelDelegate.quantity = self.QtyOrdered.text!
         self.ItemTotal.text = self.viewModelDelegate.itemTotal
-        self.viewControllerDelegate.orderTotalLbl.text = "$" + "\(Int(String(UnitPrice.text!.characters.dropFirst()))! + Int(String(viewControllerDelegate.orderTotalLbl.text!.characters.dropFirst()))!)"
+        self.updateVCItemTotal(oldQty: self.preStepperQty, newQty: Int(newQty)!)
     }
 
     
@@ -32,7 +35,19 @@ class OrderConfirmCell : UITableViewCell {
         self.ItemName.text = orderItemVM.name
         self.UnitPrice.text = orderItemVM.price
         self.QtyOrdered.text = orderItemVM.quantity
+        self.preStepperQty = Int(orderItemVM.quantity)
         self.ItemTotal.text = orderItemVM.itemTotal
+    }
+    
+    func updateVCItemTotal(oldQty: Int, newQty: Int) {
+        self.preStepperQty = newQty
+        if !(newQty == 0 && oldQty == 0) {
+            if newQty > oldQty {
+                self.viewControllerDelegate.orderTotalLbl.text = "$" + "\(Int(String(UnitPrice.text!.characters.dropFirst()))! + Int(String(viewControllerDelegate.orderTotalLbl.text!.characters.dropFirst()))!)"
+            } else {
+                self.viewControllerDelegate.orderTotalLbl.text = "$" + "\(Int(String(viewControllerDelegate.orderTotalLbl.text!.characters.dropFirst()))! - Int(String(UnitPrice.text!.characters.dropFirst()))!)"
+            }
+        }
     }
 
 }
