@@ -39,7 +39,8 @@ class OrderConfirmCell : UITableViewCell {
         self.ItemTotal.text = orderItemVM.itemTotal
     }
     
-    func updateVCItemTotal(oldQty: Int, newQty: Int) {
+    
+    func updateVCItemTotal(oldQty: Int, newQty: Int) { ///Doesn't fit right. There should be a better/scalable way to update OrderConfirmVC.itemTotal
         self.preStepperQty = newQty
         if !(newQty == 0 && oldQty == 0) {
             if newQty > oldQty {

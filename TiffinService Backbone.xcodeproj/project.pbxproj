@@ -10,6 +10,10 @@
 		3B39754B6B5F9CE7F4BBDFAD /* Pods_TiffinService_Backbone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E107A1A3297702F443AF2AA /* Pods_TiffinService_Backbone.framework */; };
 		4A33025DF2207CDE11D30CF1 /* Pods_TiffinService_BackboneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EDB96C963FB9D258B2BB6F /* Pods_TiffinService_BackboneTests.framework */; };
 		98BA09B244F32A513B221175 /* Pods_TiffinService_BackboneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03255E78D3BEC25343D5FA8C /* Pods_TiffinService_BackboneUITests.framework */; };
+		CB0993C91E7EF4AE001A8616 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0993C81E7EF4AD001A8616 /* Balance.swift */; };
+		CB0993CB1E7F0478001A8616 /* BalanceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0993CA1E7F0478001A8616 /* BalanceVM.swift */; };
+		CB0993CD1E7F09A9001A8616 /* BalanceNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0993CC1E7F09A9001A8616 /* BalanceNetworker.swift */; };
+		CB0993CF1E7F2886001A8616 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0993CE1E7F2886001A8616 /* Transaction.swift */; };
 		CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44321E5E906D003706F2 /* AppDelegate.swift */; };
 		CB1A44381E5E906E003706F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1A44361E5E906D003706F2 /* Main.storyboard */; };
 		CB1A443B1E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB1A44391E5E906E003706F2 /* TiffinService_Backbone.xcdatamodeld */; };
@@ -63,6 +67,10 @@
 		86F045515BF8BACB9D9CB384 /* Pods-TiffinService BackboneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneTests/Pods-TiffinService BackboneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2EDB96C963FB9D258B2BB6F /* Pods_TiffinService_BackboneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiffinService_BackboneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C679BE895F7D550EC22D816D /* Pods-TiffinService BackboneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiffinService BackboneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiffinService BackboneTests/Pods-TiffinService BackboneTests.release.xcconfig"; sourceTree = "<group>"; };
+		CB0993C81E7EF4AD001A8616 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		CB0993CA1E7F0478001A8616 /* BalanceVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceVM.swift; sourceTree = "<group>"; };
+		CB0993CC1E7F09A9001A8616 /* BalanceNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceNetworker.swift; sourceTree = "<group>"; };
+		CB0993CE1E7F2886001A8616 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		CB1A442F1E5E906D003706F2 /* TiffinService Backbone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TiffinService Backbone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1A44321E5E906D003706F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB1A44371E5E906D003706F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,6 +220,8 @@
 				CB1A44641E5EA2BD003706F2 /* MenuItem.swift */,
 				CB1A44741E62A727003706F2 /* OrderItem.swift */,
 				CBF10EB01E6E4DAC003526F4 /* BaseModel.swift */,
+				CB0993C81E7EF4AD001A8616 /* Balance.swift */,
+				CB0993CE1E7F2886001A8616 /* Transaction.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -250,6 +260,7 @@
 			children = (
 				CB1A44811E651EFF003706F2 /* MenuItemService.swift */,
 				CBF10EAA1E6C8043003526F4 /* OrderItemService.swift */,
+				CB0993CC1E7F09A9001A8616 /* BalanceNetworker.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 			children = (
 				CBF10EB51E6E6DBA003526F4 /* MenuInventoryItemVM.swift */,
 				CB6A65961E70CB55002F4C27 /* OrderItemVM.swift */,
+				CB0993CA1E7F0478001A8616 /* BalanceVM.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -552,8 +564,11 @@
 				CB1A447B1E638865003706F2 /* DateUtils.swift in Sources */,
 				CBF10EB61E6E6DBA003526F4 /* MenuInventoryItemVM.swift in Sources */,
 				CBF10EB11E6E4DAC003526F4 /* BaseModel.swift in Sources */,
+				CB0993CB1E7F0478001A8616 /* BalanceVM.swift in Sources */,
+				CB0993C91E7EF4AE001A8616 /* Balance.swift in Sources */,
 				CBF10EAD1E6C8ECA003526F4 /* OrderConfirmVC.swift in Sources */,
 				CBF10EAB1E6C8043003526F4 /* OrderItemService.swift in Sources */,
+				CB0993CD1E7F09A9001A8616 /* BalanceNetworker.swift in Sources */,
 				CBF10EAF1E6C98E7003526F4 /* OrderConfirmCell.swift in Sources */,
 				CBF10EB31E6E6CB9003526F4 /* TimeUtils.swift in Sources */,
 				CB1A44651E5EA2BD003706F2 /* MenuItem.swift in Sources */,
@@ -561,6 +576,7 @@
 				CB1A44781E62AF94003706F2 /* MenuItemCell.swift in Sources */,
 				CB1A44731E623B08003706F2 /* MenuItemUploadVC.swift in Sources */,
 				CB1A44751E62A727003706F2 /* OrderItem.swift in Sources */,
+				CB0993CF1E7F2886001A8616 /* Transaction.swift in Sources */,
 				CB1A44821E651EFF003706F2 /* MenuItemService.swift in Sources */,
 				CB1A44331E5E906D003706F2 /* AppDelegate.swift in Sources */,
 				CB1A447F1E6518AD003706F2 /* MenuForClientVC.swift in Sources */,
