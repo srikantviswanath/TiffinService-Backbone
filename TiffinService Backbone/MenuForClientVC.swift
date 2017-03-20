@@ -20,7 +20,6 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
             self.menuList = publishedMenuVM.containees
             self.menuTable.reloadData()
         }
-        
     }
     
     @IBAction func SubmitOrder(sender: UIButton) {

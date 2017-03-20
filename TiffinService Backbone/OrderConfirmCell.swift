@@ -22,10 +22,11 @@ class OrderConfirmCell : UITableViewCell {
     
     var preStepperQty: Int!
     
+    //FIXME(Bug introduced) - Stepper changed value on reused cel shows incorrect value
     @IBAction func QtyStepperPressed(sender: UIStepper) {
         let newQty = Int(QtyStepper.value).description
         self.QtyOrdered.text = newQty
-        self.viewModelDelegate.quantity = self.QtyOrdered.text!
+        self.viewModelDelegate.quantity = newQty
         self.ItemTotal.text = self.viewModelDelegate.itemTotal
         self.updateVCItemTotal(oldQty: self.preStepperQty, newQty: Int(newQty)!)
     }

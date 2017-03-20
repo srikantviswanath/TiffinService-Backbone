@@ -47,8 +47,10 @@ class TransactionVM {
         self.networkDelegate.viewModel = self
     }
     
-    func writeToDB() {
-        self.networkDelegate.writeToDB()
+    func writeToDB(completed: @escaping ()->()) {
+        self.networkDelegate.writeToDB {
+            completed()
+        }
     }
     
 }
