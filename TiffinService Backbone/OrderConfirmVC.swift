@@ -23,8 +23,11 @@ class OrderConfirmVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func OrderPlacedBtnPressed(sneder: UIButton) {
-        let orderVM = OrderVM(userId: "userId103", userName: "JaggaRao, M", orderTime: getCurrentTime(), orderItemVMs: orderItemVMsList)
+        let userId = "userId104"
+        let orderVM = OrderVM(userId: userId, userName: "PullaRao, M", orderTime: getCurrentTime(), orderItemVMs: orderItemVMsList)
         orderVM.writeToDB {
+            let transactionVM = TransactionVM(amount: self.orderTotalLbl.text!, type: "ORDER", userId: userId)
+            transactionVM.writeToDB()
             print("Order Placed")
         }
     }

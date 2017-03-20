@@ -27,10 +27,13 @@ class Transaction: Mappable {
         self.time <- map["Time"]
     }
     
-    init(amount: Int, type: String, date: String, time: String) {
+    
+    init(amount: Int, type: String, date: String, time: String, userId: String) {
+        self.id = UUID().uuidString
         self.amount = amount
         self.type = type
         self.date = date
         self.time = time
+        self.userId = userId
     }
 }
