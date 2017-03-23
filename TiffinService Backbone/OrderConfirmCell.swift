@@ -22,7 +22,7 @@ class OrderConfirmCell : UITableViewCell {
     
     var preStepperQty: Int!
     
-    //FIXME(Bug introduced) - Stepper changed value on reused cel shows incorrect value
+    //FIXME(Bug introduced) - Stepper changed value on reused cell shows incorrect value
     @IBAction func QtyStepperPressed(sender: UIStepper) {
         let newQty = Int(QtyStepper.value).description
         self.QtyOrdered.text = newQty

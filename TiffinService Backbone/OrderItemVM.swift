@@ -34,7 +34,7 @@ class OrderItemVM {
         self.itemID = orderItem.itemID
         self.name = orderItem.name
         self.price = "$" + "\(orderItem.price)"
-        self.quantity = "\(orderItem.quantity)"
+        self.quantity = "\(orderItem.quantity!)"
         self.instructions = orderItem.instructions
     }
     
@@ -80,6 +80,14 @@ class OrderVM {
         self.model = Order(userId: userId, userName: userName, orderTime: orderTime, orderItems: orderItems)
         
     }
+    
+    static func getAllByPeople(for date: String = getCurrentDate(), completed: @escaping (OrderVM) -> ()) {
+        networkDelegate.getAllByPeople(date: date){ order in
+            let orderVM = OrderVM(order: order)
+            completed(orderVM)
+        }
+    }
+    
     func writeToDB(update: Bool = false, completed: @escaping () -> ()) {
         type(of: self).networkDelegate.writeToDB(order: self.model, completed: completed)
     }
