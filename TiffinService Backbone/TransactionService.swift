@@ -14,18 +14,16 @@ struct TransactionNetworker {
     
     static var REF_TRANSACTIONS = FIRDatabase.database().reference().child("Transactions")
     
-    var viewModel: TransactionVM!
-    
-    func writeToDB(completed: @escaping ()->()) {
-        let transactionJSON = Mapper().toJSON(self.viewModel.model)
+    func writeToDB(model: Transaction, completed: @escaping ()->()) {
+        let transactionJSON = Mapper().toJSON(model)
         TransactionNetworker.REF_TRANSACTIONS.observeSingleEvent(of: .value, with: { (snapshot) in
-            if snapshot.hasChild(self.viewModel.userId) {
-                TransactionNetworker.REF_TRANSACTIONS.child(self.viewModel.userId).updateChildValues(
-                    [self.viewModel.id: transactionJSON]
+            if snapshot.hasChild(model.userId) {
+                TransactionNetworker.REF_TRANSACTIONS.child(model.userId).updateChildValues(
+                    [model.id: transactionJSON]
                 ){_,_ in completed()}
             } else {
                 TransactionNetworker.REF_TRANSACTIONS.updateChildValues(
-                    [self.viewModel.userId: [self.viewModel.id: transactionJSON]]
+                    [model.userId: [model.id: transactionJSON]]
                 ){_,_ in completed()}
             }
         })

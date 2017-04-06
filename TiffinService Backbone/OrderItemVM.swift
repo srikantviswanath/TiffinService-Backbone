@@ -51,7 +51,7 @@ class OrderItemVM {
 
 class OrderVM {
     
-    static var networkDelegate = OrderNetworker.self
+    var networker = OrderNetworker()
     
     var userId: String!
     var userName: String!
@@ -81,15 +81,20 @@ class OrderVM {
         
     }
     
-    static func getAllByPeople(for date: String = getCurrentDate(), completed: @escaping (OrderVM) -> ()) {
-        networkDelegate.getAllByPeople(date: date){ order in
+    ///CAUTION: Used internally as a placeholder for invoking any instance methods. Be very careful while calling this
+    convenience init() {
+        self.init(userId: "DORMANT", userName: "DORMANT", orderTime: "DORMANT", orderItemVMs: [OrderItemVM]())
+    }
+    
+    func getAllByPeople(for date: String = getCurrentDate(), completed: @escaping (OrderVM) -> ()) {
+        self.networker.getAllByPeople(date: date){ order in
             let orderVM = OrderVM(order: order)
             completed(orderVM)
         }
     }
     
     func writeToDB(update: Bool = false, completed: @escaping () -> ()) {
-        type(of: self).networkDelegate.writeToDB(order: self.model, completed: completed)
+        self.networker.writeToDB(model: self.model, completed: completed)
     }
 }
 

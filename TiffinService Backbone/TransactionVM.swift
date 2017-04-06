@@ -10,7 +10,7 @@ import Foundation
 
 class TransactionVM {
     
-    var networkDelegate: TransactionNetworker!
+    var networker =  TransactionNetworker()
     
     var model: Transaction!
     var id: String {
@@ -34,8 +34,6 @@ class TransactionVM {
     
     ///For creating instances after fetching underlying model from network
     init(transaction: Transaction) {
-        self.networkDelegate = TransactionNetworker()
-        self.networkDelegate.viewModel = self
         self.model = transaction
     }
     
@@ -43,12 +41,10 @@ class TransactionVM {
     init(amount: String, type: String, userId: String) {
         let txnAmount = String(amount.characters.dropFirst())
         self.model = Transaction(amount: Int(txnAmount)!, type: type, date: getCurrentDate(), time: getCurrentTime(), userId: userId)
-        self.networkDelegate = TransactionNetworker()
-        self.networkDelegate.viewModel = self
     }
     
     func writeToDB(completed: @escaping ()->()) {
-        self.networkDelegate.writeToDB {
+        self.networker.writeToDB(model: self.model) {
             completed()
         }
     }

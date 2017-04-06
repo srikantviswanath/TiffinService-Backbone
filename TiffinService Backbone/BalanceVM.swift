@@ -11,7 +11,7 @@ import ObjectMapper
 
 class BalanceVM {
     
-    var networkDelegate: BalanceNetworker!
+    var networker = BalanceNetworker()
     
     var model: Balance!
     var userId: String {
@@ -27,19 +27,16 @@ class BalanceVM {
     ///For creating instances after fetching underlying model from network
     init(balance: Balance) {
         self.model = balance
-        self.networkDelegate = BalanceNetworker()
-        self.networkDelegate.viewModel = self
     }
     
     ///For instantiating with Zero currentBalance. E.g. from UI or when network did not fetch a preexisting balance
     init(userId: String, userFN: String, userLN: String) {
         self.model = Balance(currentBalance: 0, userId: userId, userFN: userFN, userLN: userLN)
-        self.networkDelegate = BalanceNetworker()
-        self.networkDelegate.viewModel = self
+        self.networker = BalanceNetworker()
     }
     
     func writeToDB() {
-        self.networkDelegate.writeToDB()
+        self.networker.writeToDB(model: self.model)
     }
     
     func updateBalance(newDeltaQty: String) {
