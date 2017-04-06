@@ -17,7 +17,7 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         inventoryTable.delegate = self
         inventoryTable.dataSource = self
-        MenuInventoryVM.getAll() { fetchedItemVMs in
+        MenuInventoryVM().getAll { fetchedItemVMs in
             self.inventoryList = fetchedItemVMs
             self.inventoryTable.reloadData()
         }

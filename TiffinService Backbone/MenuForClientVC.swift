@@ -16,7 +16,7 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         menuTable.delegate = self
         menuTable.dataSource = self
-        PublishedMenuVM.getMenu() { publishedMenuVM in
+        PublishedMenuVM().getMenu() { publishedMenuVM in
             self.menuList = publishedMenuVM.containees
             self.menuTable.reloadData()
         }

@@ -10,7 +10,7 @@ import Foundation
 
 class MenuInventoryVM {
     
-    static var networkDecorator = MenuItemNetworker.self
+    var networker = MenuItemNetworker()
     
     var model: MenuInventoryItem!
     var itemID: String!
@@ -36,8 +36,13 @@ class MenuInventoryVM {
         self.model = MenuInventoryItem(name: name, desc: description, price: price)
     }
     
-    static func getAll(completed: @escaping ([MenuInventoryVM]) -> ()) {
-        networkDecorator.getAll() { menuItemModels in
+    ///CAUTION: Used internally as a placeholder for invoking any instance methods. Be very careful while calling this
+    convenience init() {
+        self.init(name: "DORMANT", price: 0, description: "")
+    }
+    
+    func getAll(completed: @escaping ([MenuInventoryVM]) -> ()) {
+        self.networker.getAll() { menuItemModels in
             var menuItemVMs = [MenuInventoryVM]()
             for menuItem in menuItemModels {
                 menuItemVMs.append(MenuInventoryVM(menuInvItem: menuItem))
@@ -47,13 +52,13 @@ class MenuInventoryVM {
     }
     
     func writeToDB(is update:Bool=false, completed: @escaping ()->()) {
-        type(of: self).networkDecorator.writeToDB(menuItem: self.model, is: update, completed: completed)
+        self.networker.writeToDB(model: self.model, is: update, completed: completed)
     }
 }
 
 class PublishedMenuVM {
     
-    static var networkDecorator = PublishedMenuNetworker.self
+    var networker = PublishedMenuNetworker()
     
     var publishDate: String!
     var model: PublishedMenu!
@@ -77,14 +82,19 @@ class PublishedMenuVM {
         self.model = PublishedMenu(publishDate: pubDate, menuItems: menuItems)
     }
     
-    static func getMenu(completed: @escaping (PublishedMenuVM) -> ()) {
-        networkDecorator.getMenu() { publishedMenu in
+    ///CAUTION: Used internally as a placeholder for invoking any instance methods. Be very careful while calling this
+    convenience init() {
+        self.init(pubDate: "", menuItemVMs: [MenuInventoryVM]())
+    }
+    
+    func getMenu(completed: @escaping (PublishedMenuVM) -> ()) {
+        self.networker.getMenu() { publishedMenu in
             let publishedMenuVM = PublishedMenuVM(publishedMenu: publishedMenu)
             completed(publishedMenuVM)
         }
     }
     
     func writeToDB(update: Bool = false, completed: @escaping () -> ()) {
-        type(of: self).networkDecorator.writeToDB(publishedMenu: self.model, is: update, completed: completed)
+        self.networker.writeToDB(model: self.model, is: update, completed: completed)
     }
 }

@@ -16,8 +16,8 @@ struct OrderNetworker {
     static var REF_ORDERS_TODAY = REF_ORDERS.child(getCurrentDate())
     
     //TODO: BAD CODE. Refactor/reuse somehow!!
-    static func getAllByPeople(date: String, completed: @escaping (Order) -> ()) {
-        REF_ORDERS.child(date).observe(.childAdded, with: {orderSS in
+    func getAllByPeople(date: String, completed: @escaping (Order) -> ()) {
+        OrderNetworker.REF_ORDERS.child(date).observe(.childAdded, with: {orderSS in
             var orderItemObjs = [OrderItem]()
             if let orderContents = orderSS.children.allObjects as? [FIRDataSnapshot] {
                 for child in orderContents {
@@ -39,17 +39,17 @@ struct OrderNetworker {
         })
     }
     
-    static func writeToDB(order: Order, completed: @escaping () -> ()) {
+    func writeToDB(model: Order, completed: @escaping () -> ()) {
         var dataToWrite = [String: Any]()
         var ordersPlaced = [String: Any]()
-        for orderItem in order.containees {
+        for orderItem in model.containees {
             let orderItemJSON = Mapper().toJSON(orderItem)
             ordersPlaced[orderItem.itemID] = orderItemJSON
         }
-        var orderJSON = Mapper().toJSON(order)
+        var orderJSON = Mapper().toJSON(model)
         orderJSON["ItemsOrdered"] = ordersPlaced
-        dataToWrite[order.userId] = orderJSON
-        REF_ORDERS_TODAY.updateChildValues(dataToWrite) { _, _ in completed()}
+        dataToWrite[model.userId] = orderJSON
+        OrderNetworker.REF_ORDERS_TODAY.updateChildValues(dataToWrite) { _, _ in completed()}
     }
     
 }

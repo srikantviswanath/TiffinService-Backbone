@@ -24,10 +24,12 @@ func parseMenuItemsSnapshot(menuItemsSS: FIRDataSnapshot) -> [MenuInventoryItem]
 
 struct MenuItemNetworker {
     
+    var menuItemsFetched = [MenuInventoryItem]()
+    
     static var REF_INVENTORY = FIRDatabase.database().reference().child("MenuItems")
     
-    static func getAll(completion: @escaping ([MenuInventoryItem]) -> ()) {
-        REF_INVENTORY.observeSingleEvent(of: .value, with: { menuItemsSS in
+    func getAll(completion: @escaping ([MenuInventoryItem]) -> ()) {
+        MenuItemNetworker.REF_INVENTORY.observeSingleEvent(of: .value, with: { menuItemsSS in
             let menuItemsFetched = parseMenuItemsSnapshot(menuItemsSS: menuItemsSS)
             completion(menuItemsFetched)
         })
@@ -38,13 +40,13 @@ struct MenuItemNetworker {
      converting to JSON.
      :update: if set to true indicates updating a pre-existing node at Firebase
      */
-    static func writeToDB(menuItem: MenuInventoryItem, is update:Bool=false, completed: @escaping ()->()) {
-        let jsonItem = Mapper().toJSON(menuItem)
+    func writeToDB(model: MenuInventoryItem, is update:Bool=false, completed: @escaping ()->()) {
+        let jsonItem = Mapper().toJSON(model)
         if !update {
-            let newMenuItemRef = REF_INVENTORY.childByAutoId()
+            let newMenuItemRef = MenuItemNetworker.REF_INVENTORY.childByAutoId()
             newMenuItemRef.updateChildValues(jsonItem) {_,_ in completed()}
         } else {
-            REF_INVENTORY.child(menuItem.itemID).updateChildValues(jsonItem) { _, _ in completed()}
+            MenuItemNetworker.REF_INVENTORY.child(model.itemID).updateChildValues(jsonItem) { _, _ in completed()}
         }
     }
 
@@ -55,8 +57,8 @@ struct PublishedMenuNetworker {
     static var REF_PUBLISHED = FIRDatabase.database().reference().child("PublishedMenu")
     static var REF_PUBLISHED_TODAY = PublishedMenuNetworker.REF_PUBLISHED.child(getCurrentDate())
     
-    static func getMenu(for date:String=getCurrentDate(), completed: @escaping (PublishedMenu) -> ()) {
-        REF_PUBLISHED.child(date).observe(.value, with: { publishedMenuSS in
+    func getMenu(for date:String=getCurrentDate(), completed: @escaping (PublishedMenu) -> ()) {
+        PublishedMenuNetworker.REF_PUBLISHED.child(date).observe(.value, with: { publishedMenuSS in
             let menuItems = parseMenuItemsSnapshot(menuItemsSS: publishedMenuSS)
             let publishedMenuObj = PublishedMenu(publishDate: date, menuItems: menuItems)
             completed(publishedMenuObj)
@@ -66,12 +68,12 @@ struct PublishedMenuNetworker {
     /**
      Method to write an instance of PublishedMenu to Firebase. It is always writen to today's date child node
      */
-    static func writeToDB(publishedMenu: PublishedMenu, is update:Bool=false, completed: @escaping ()->()) {
+    func writeToDB(model: PublishedMenu, is update:Bool=false, completed: @escaping ()->()) {
         var dataToWrite = [String: Any]()
-        for menuItem in publishedMenu.containees {
+        for menuItem in model.containees {
             dataToWrite[menuItem.itemID] = Mapper().toJSON(menuItem)
         }
-        REF_PUBLISHED_TODAY.updateChildValues(dataToWrite) {_, _ in completed()}
+        PublishedMenuNetworker.REF_PUBLISHED_TODAY.updateChildValues(dataToWrite) {_, _ in completed()}
     }
 
     

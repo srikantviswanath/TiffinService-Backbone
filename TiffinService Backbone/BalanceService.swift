@@ -14,7 +14,7 @@ struct BalanceNetworker {
     
     static var REF_BALANCES = FIRDatabase.database().reference().child("Balances")
     
-    var viewModel: BalanceVM!
+    var viewModelDelegate: ViewModelDelegate!
     
     static func getBalancePerUser(userId: String, userFN: String = "", userLN: String = "", completed: @escaping (BalanceVM)->()) {
         REF_BALANCES.child(userId).observeSingleEvent(of: .value, with: { snapshot in
@@ -30,13 +30,13 @@ struct BalanceNetworker {
         })
     }
     
-    func writeToDB() {
-        let balanceJSON = Mapper().toJSON(self.viewModel.model)
-        BalanceNetworker.REF_BALANCES.child(self.viewModel.userId).observeSingleEvent(of: .value, with: { balanceSS in
+    func writeToDB(model: Balance) {
+        let balanceJSON = Mapper().toJSON(model)
+        BalanceNetworker.REF_BALANCES.child(model.userId).observeSingleEvent(of: .value, with: { balanceSS in
             if balanceSS.exists() {
-                BalanceNetworker.REF_BALANCES.child(self.viewModel.userId).updateChildValues(balanceJSON)
+                BalanceNetworker.REF_BALANCES.child(model.userId).updateChildValues(balanceJSON)
             } else {
-                BalanceNetworker.REF_BALANCES.updateChildValues([self.viewModel.userId: balanceJSON])
+                BalanceNetworker.REF_BALANCES.updateChildValues([model.userId: balanceJSON])
             }
         })
     }
