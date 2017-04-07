@@ -33,5 +33,4 @@ class Balance: Mappable {
     func updateBalance(newTxnAmt: Int) {
         self.currentBalance += newTxnAmt
     }
-    
 }

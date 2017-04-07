@@ -8,15 +8,17 @@
 
 import Foundation
 
-class MenuInventoryVM {
+class MenuInventoryVM: NetworkDelegate {
     
     var networker = MenuItemNetworker()
+    var delegate: NetworkDelegate?
     
-    var model: MenuInventoryItem!
     var itemID: String!
     var name: String!
     var price: String!
     var description: String!
+    var model: MenuInventoryItem!
+    var vmsFetchedOverNetwork = [MenuInventoryVM]()
     
     ///For creating instances after fetching underlying model from network
     init(menuInvItem: MenuInventoryItem) {
@@ -39,21 +41,23 @@ class MenuInventoryVM {
     ///CAUTION: Used internally as a placeholder for invoking any instance methods. Be very careful while calling this
     convenience init() {
         self.init(name: "DORMANT", price: 0, description: "")
+        self.networker.delegate = self
     }
     
-    func getAll(completed: @escaping ([MenuInventoryVM]) -> ()) {
-        self.networker.getAll() { menuItemModels in
-            var menuItemVMs = [MenuInventoryVM]()
-            for menuItem in menuItemModels {
-                menuItemVMs.append(MenuInventoryVM(menuInvItem: menuItem))
-            }
-            completed(menuItemVMs)
-        }
-    }
+    func getAll() {self.networker.getAll()}
     
     func writeToDB(is update:Bool=false, completed: @escaping ()->()) {
         self.networker.writeToDB(model: self.model, is: update, completed: completed)
     }
+    
+    func didFinishNetworkCall() {
+        let models = self.networker.menuItemsFetched
+        for model in models {
+            self.vmsFetchedOverNetwork.append(MenuInventoryVM(menuInvItem: model))
+        }
+        self.delegate?.didFinishNetworkCall()
+    }
+
 }
 
 class PublishedMenuVM {

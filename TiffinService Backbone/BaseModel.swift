@@ -20,20 +20,10 @@ class MenuItemCore {
     }
 }
 
-protocol ViewModelDelegate {
-    var networkDelegate: NetworkManager {get set}
-}
-
-/*protocol EconomicViewModelManager: ViewModelManager {
-    var userId: String {get set}
-    var model: 
-}*/
-
-protocol NetworkManager {
-    var viewModelDelegate: ViewModelDelegate {get set}
-    func writeToDB()
-}
-
 protocol NetworkDelegate {
-    
+    func didFinishNetworkCall()
+}
+
+protocol ViewModel: NetworkDelegate {
+    var delegate: NetworkDelegate {get}
 }

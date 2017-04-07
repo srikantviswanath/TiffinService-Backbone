@@ -22,16 +22,17 @@ func parseMenuItemsSnapshot(menuItemsSS: FIRDataSnapshot) -> [MenuInventoryItem]
     return menuItemObjsFetched
 }
 
-struct MenuItemNetworker {
+class MenuItemNetworker {
     
+    var delegate: NetworkDelegate?
     var menuItemsFetched = [MenuInventoryItem]()
     
     static var REF_INVENTORY = FIRDatabase.database().reference().child("MenuItems")
     
-    func getAll(completion: @escaping ([MenuInventoryItem]) -> ()) {
+    func getAll() {
         MenuItemNetworker.REF_INVENTORY.observeSingleEvent(of: .value, with: { menuItemsSS in
-            let menuItemsFetched = parseMenuItemsSnapshot(menuItemsSS: menuItemsSS)
-            completion(menuItemsFetched)
+            self.menuItemsFetched = parseMenuItemsSnapshot(menuItemsSS: menuItemsSS)
+            self.delegate?.didFinishNetworkCall()
         })
     }
     

@@ -14,8 +14,6 @@ struct BalanceNetworker {
     
     static var REF_BALANCES = FIRDatabase.database().reference().child("Balances")
     
-    var viewModelDelegate: ViewModelDelegate!
-    
     static func getBalancePerUser(userId: String, userFN: String = "", userLN: String = "", completed: @escaping (BalanceVM)->()) {
         REF_BALANCES.child(userId).observeSingleEvent(of: .value, with: { snapshot in
             if snapshot.exists() {
