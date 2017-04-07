@@ -8,20 +8,24 @@
 
 import UIKit
 
-class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NetworkDelegate {
 
     @IBOutlet weak var inventoryTable: UITableView!
     
     var inventoryList = [MenuInventoryVM]()
+    var vmForNetworking = MenuInventoryVM()
     override func viewDidLoad() {
         super.viewDidLoad()
         inventoryTable.delegate = self
         inventoryTable.dataSource = self
-        MenuInventoryVM().getAll { fetchedItemVMs in
-            self.inventoryList = fetchedItemVMs
-            self.inventoryTable.reloadData()
-        }
+        self.vmForNetworking.delegate = self
+        self.vmForNetworking.getAll()
 
+    }
+    
+    func didFinishNetworkCall() {
+        self.inventoryList = self.vmForNetworking.vmsFetchedOverNetwork
+        self.inventoryTable.reloadData()
     }
     
     @IBAction func uploadItemBtnClicked(sender: UIButton) {
