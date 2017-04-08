@@ -20,10 +20,14 @@ class MenuItemCore {
     }
 }
 
+protocol Networker {
+    var delegate: NetworkingVC?{get set}
+}
+
 protocol NetworkDelegate {
     func didFinishNetworkCall()
 }
 
-protocol ViewModel: NetworkDelegate {
-    var delegate: NetworkDelegate {get}
+protocol NetworkingVC: NetworkDelegate {
+    var networker: Networker {get set}
 }

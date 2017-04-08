@@ -25,13 +25,16 @@ func parseMenuItemsSnapshot(menuItemsSS: FIRDataSnapshot) -> [MenuInventoryItem]
 class MenuItemNetworker {
     
     var delegate: NetworkDelegate?
-    var menuItemsFetched = [MenuInventoryItem]()
+    var viewModelsFetched = [MenuInventoryVM]()
     
     static var REF_INVENTORY = FIRDatabase.database().reference().child("MenuItems")
     
     func getAll() {
         MenuItemNetworker.REF_INVENTORY.observeSingleEvent(of: .value, with: { menuItemsSS in
-            self.menuItemsFetched = parseMenuItemsSnapshot(menuItemsSS: menuItemsSS)
+            let models = parseMenuItemsSnapshot(menuItemsSS: menuItemsSS)
+            for model in models {
+                self.viewModelsFetched.append(MenuInventoryVM(menuInvItem: model))
+            }
             self.delegate?.didFinishNetworkCall()
         })
     }
@@ -41,13 +44,13 @@ class MenuItemNetworker {
      converting to JSON.
      :update: if set to true indicates updating a pre-existing node at Firebase
      */
-    func writeToDB(model: MenuInventoryItem, is update:Bool=false, completed: @escaping ()->()) {
-        let jsonItem = Mapper().toJSON(model)
+    func writeToDB(viewModel: MenuInventoryVM, is update:Bool=false, completed: @escaping ()->()) {
+        let jsonItem = Mapper().toJSON(viewModel.model)
         if !update {
             let newMenuItemRef = MenuItemNetworker.REF_INVENTORY.childByAutoId()
             newMenuItemRef.updateChildValues(jsonItem) {_,_ in completed()}
         } else {
-            MenuItemNetworker.REF_INVENTORY.child(model.itemID).updateChildValues(jsonItem) { _, _ in completed()}
+            MenuItemNetworker.REF_INVENTORY.child(viewModel.model.itemID).updateChildValues(jsonItem) { _, _ in completed()}
         }
     }
 
