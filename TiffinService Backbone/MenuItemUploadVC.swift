@@ -11,6 +11,8 @@ import ObjectMapper
 
 class MenuItemUpload: UIViewController, UITextFieldDelegate {
 
+    var networker = MenuItemNetworker()
+    
     @IBOutlet weak var ItemNameField: UITextField!
     @IBOutlet weak var ItemDescriptionField: UITextField!
     @IBOutlet weak var ItemPriceField: UITextField!
@@ -28,7 +30,7 @@ class MenuItemUpload: UIViewController, UITextFieldDelegate {
                 name: self.ItemNameField.text!, price: Int(self.ItemPriceField.text!)!,
                 description: self.ItemDescriptionField.text!
             )
-            newMenuItem.writeToDB() {
+            self.networker.writeToDB(viewModel: newMenuItem) {
                 self.performSegue(withIdentifier: "NewItemToInventory", sender: nil)
             }
         }

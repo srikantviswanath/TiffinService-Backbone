@@ -9,22 +9,24 @@
 import UIKit
 
 class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NetworkDelegate {
+    
+    var networker = MenuItemNetworker()
 
     @IBOutlet weak var inventoryTable: UITableView!
     
-    var inventoryList = [MenuInventoryVM]()
-    var vmForNetworking = MenuInventoryVM()
+    var dataSource = [MenuInventoryVM]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         inventoryTable.delegate = self
         inventoryTable.dataSource = self
-        self.vmForNetworking.delegate = self
-        self.vmForNetworking.getAll()
+        self.networker.delegate = self
+        self.networker.getAll()
 
     }
     
     func didFinishNetworkCall() {
-        self.inventoryList = self.vmForNetworking.vmsFetchedOverNetwork
+        self.dataSource = self.networker.viewModelsFetched
         self.inventoryTable.reloadData()
     }
     
@@ -33,19 +35,19 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func publishMenuBtnClicked(sender: UIButton) {
-        let publishedMenuVM = PublishedMenuVM(pubDate: getCurrentDate(), menuItemVMs: Array(self.inventoryList[2...8])) //Replace with vendor selected menu
+        let publishedMenuVM = PublishedMenuVM(pubDate: getCurrentDate(), menuItemVMs: Array(self.dataSource[2...8])) //Replace with vendor selected menu
         publishedMenuVM.writeToDB() {
             print("Items published")
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.inventoryList.count
+        return self.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = inventoryTable.dequeueReusableCell(withIdentifier: "MenuItemCell") as? MenuItemCell{
-            cell.configureCell(menuItemVM: inventoryList[indexPath.row])
+            cell.configureCell(menuItemVM: dataSource[indexPath.row])
             return cell
         } else {
             return UITableViewCell()
