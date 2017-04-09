@@ -69,6 +69,7 @@ class PublishedMenuNetworker {
             let menuItems = parseMenuItemsSnapshot(menuItemsSS: publishedMenuSS)
             let publishedMenuObj = PublishedMenu(publishDate: date, menuItems: menuItems)
             self.viewModelsFetched = [PublishedMenuVM(publishedMenu: publishedMenuObj)]
+            self.delegate?.didFinishNetworkCall()
         })
     }
     

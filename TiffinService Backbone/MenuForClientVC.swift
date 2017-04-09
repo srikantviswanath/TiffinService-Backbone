@@ -10,14 +10,16 @@ import UIKit
 class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NetworkDelegate {
     
     @IBOutlet weak var menuTable: UITableView!
+    @IBOutlet weak var orderTotalLbl: UILabel!
     
     var networker = PublishedMenuNetworker()
-    var dataSource = [MenuInventoryVM]()
+    var dataSource = [OrderItemVM]()
     override func viewDidLoad() {
         super.viewDidLoad()
         menuTable.delegate = self
         menuTable.dataSource = self
-        networker.getMenu()
+        self.networker.delegate = self
+        self.networker.getMenu()
     }
     
     @IBAction func SubmitOrder(sender: UIButton) {
@@ -29,8 +31,11 @@ class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = menuTable.dequeueReusableCell(withIdentifier: "MenuItemForClient") as? MenuItemCell{
-            cell.configureCell(menuItemVM: dataSource[indexPath.row])
+        if let cell = menuTable.dequeueReusableCell(withIdentifier: "MenuItemForClient") as? OrderConfirmCell{
+            let currentViewModel = self.dataSource[indexPath.row]
+            cell.viewModelDelegate = currentViewModel
+            cell.viewControllerDelegate = self
+            cell.configureCell(orderItemVM: currentViewModel)
             return cell
         } else {
             return UITableViewCell()
@@ -41,7 +46,7 @@ class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         return 1
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OrderConfirm" {
             if let destVC = segue.destination as? OrderConfirmVC {
                 var orderItems = [OrderItemVM]()
@@ -51,10 +56,13 @@ class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 destVC.orderItemVMsList = orderItems
             }
         }
-    }
+    }*/
     
     func didFinishNetworkCall() {
-        self.dataSource = self.networker.viewModelsFetched[0].containees
+        let menuItemVMs = self.networker.viewModelsFetched[0].containees
+        for item in menuItemVMs! {
+            self.dataSource.append(OrderItemVM(menuItemVM: item, quantity: 0))
+        }
         self.menuTable.reloadData()
     }
 }
