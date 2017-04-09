@@ -11,25 +11,28 @@ import Firebase
 import ObjectMapper
 
 
-class MenuInventoryItem: MenuItemCore, Mappable {
+class MenuInventoryItem: Mappable {
     
-    static var networkDelegate = MenuItemNetworker.self
-    
+    var itemID: String!
+    var name: String!
+    var price: Int!
     var description: String!
+    var customOptions: String!
     
-    init(name: String, desc: String, price: Int) {
+    init(name: String, desc: String, price: Int, customOptions: String="") {
+        self.name = name
+        self.price = price
         self.description = desc
-        super.init(name: name, price: price)
+        self.customOptions = customOptions
     }
     
-    required init?(map: Map) {
-        super.init(name: "", price: 0)
-    }
+    required init?(map: Map) {}
     
     func mapping(map: Map) {
         self.name <- map["Name"]
         self.description <- map["Description"]
         self.price <- map["Price"]
+        self.customOptions <- map["CustomOptions"]
     }
 }
 

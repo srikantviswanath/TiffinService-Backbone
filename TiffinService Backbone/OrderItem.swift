@@ -9,23 +9,23 @@
 import Foundation
 import ObjectMapper
 
-class OrderItem: MenuItemCore, Mappable {
+class OrderItem: MenuInventoryItem {
 
     var quantity: Int!
     var instructions: String?
     
     init(menuItem: MenuInventoryItem, quantity: Int, instructions:String="") {
-        super.init(name: menuItem.name, price: menuItem.price)
+        super.init(name: menuItem.name, desc: menuItem.description, price: menuItem.price)
         self.itemID = menuItem.itemID
         self.quantity = quantity
         self.instructions = instructions
     }
     
     required init?(map: Map) {
-        super.init(name: "", price: 0)
+        super.init(name: "", desc: "", price: 0)
     }
     
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         self.name <- map["Name"]
         self.price <- map["Price"]
         self.quantity <- map["Quantity"]

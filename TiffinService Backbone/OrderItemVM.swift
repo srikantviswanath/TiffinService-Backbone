@@ -13,6 +13,9 @@ class OrderItemVM {
     var model: OrderItem!
     var itemID: String!
     var name: String!
+    var description: String! {
+        return self.model.description
+    }
     var price: String!
     var quantity: String! {
         get {
