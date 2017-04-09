@@ -24,10 +24,10 @@ func parseMenuItemsSnapshot(menuItemsSS: FIRDataSnapshot) -> [MenuInventoryItem]
 
 class MenuItemNetworker {
     
+    static var REF_INVENTORY = FIRDatabase.database().reference().child("MenuItems")
+    
     var delegate: NetworkDelegate?
     var viewModelsFetched = [MenuInventoryVM]()
-    
-    static var REF_INVENTORY = FIRDatabase.database().reference().child("MenuItems")
     
     func getAll() {
         MenuItemNetworker.REF_INVENTORY.observeSingleEvent(of: .value, with: { menuItemsSS in
@@ -56,25 +56,28 @@ class MenuItemNetworker {
 
 }
 
-struct PublishedMenuNetworker {
+class PublishedMenuNetworker {
     
     static var REF_PUBLISHED = FIRDatabase.database().reference().child("PublishedMenu")
     static var REF_PUBLISHED_TODAY = PublishedMenuNetworker.REF_PUBLISHED.child(getCurrentDate())
     
-    func getMenu(for date:String=getCurrentDate(), completed: @escaping (PublishedMenu) -> ()) {
+    var delegate: NetworkDelegate?
+    var viewModelsFetched = [PublishedMenuVM]()
+    
+    func getMenu(for date:String=getCurrentDate()) {
         PublishedMenuNetworker.REF_PUBLISHED.child(date).observe(.value, with: { publishedMenuSS in
             let menuItems = parseMenuItemsSnapshot(menuItemsSS: publishedMenuSS)
             let publishedMenuObj = PublishedMenu(publishDate: date, menuItems: menuItems)
-            completed(publishedMenuObj)
+            self.viewModelsFetched = [PublishedMenuVM(publishedMenu: publishedMenuObj)]
         })
     }
     
     /**
      Method to write an instance of PublishedMenu to Firebase. It is always writen to today's date child node
      */
-    func writeToDB(model: PublishedMenu, is update:Bool=false, completed: @escaping ()->()) {
+    func writeToDB(viewModel: PublishedMenuVM, is update:Bool=false, completed: @escaping ()->()) {
         var dataToWrite = [String: Any]()
-        for menuItem in model.containees {
+        for menuItem in viewModel.model.containees {
             dataToWrite[menuItem.itemID] = Mapper().toJSON(menuItem)
         }
         PublishedMenuNetworker.REF_PUBLISHED_TODAY.updateChildValues(dataToWrite) {_, _ in completed()}

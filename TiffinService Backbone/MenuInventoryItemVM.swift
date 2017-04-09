@@ -37,8 +37,6 @@ class MenuInventoryVM {
 
 class PublishedMenuVM {
     
-    var networker = PublishedMenuNetworker()
-    
     var publishDate: String!
     var model: PublishedMenu!
     var containees: [MenuInventoryVM]!
@@ -59,21 +57,5 @@ class PublishedMenuVM {
             menuItems.append(vm.model)
         }
         self.model = PublishedMenu(publishDate: pubDate, menuItems: menuItems)
-    }
-    
-    ///CAUTION: Used internally as a placeholder for invoking any instance methods. Be very careful while calling this
-    convenience init() {
-        self.init(pubDate: "", menuItemVMs: [MenuInventoryVM]())
-    }
-    
-    func getMenu(completed: @escaping (PublishedMenuVM) -> ()) {
-        self.networker.getMenu() { publishedMenu in
-            let publishedMenuVM = PublishedMenuVM(publishedMenu: publishedMenu)
-            completed(publishedMenuVM)
-        }
-    }
-    
-    func writeToDB(update: Bool = false, completed: @escaping () -> ()) {
-        self.networker.writeToDB(model: self.model, is: update, completed: completed)
     }
 }
