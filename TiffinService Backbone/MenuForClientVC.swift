@@ -7,19 +7,17 @@
 //
 import UIKit
 
-class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NetworkDelegate {
     
     @IBOutlet weak var menuTable: UITableView!
     
-    var menuList = [MenuInventoryVM]()
+    var networker = PublishedMenuNetworker()
+    var dataSource = [MenuInventoryVM]()
     override func viewDidLoad() {
         super.viewDidLoad()
         menuTable.delegate = self
         menuTable.dataSource = self
-        PublishedMenuVM().getMenu() { publishedMenuVM in
-            self.menuList = publishedMenuVM.containees
-            self.menuTable.reloadData()
-        }
+        networker.getMenu()
     }
     
     @IBAction func SubmitOrder(sender: UIButton) {
@@ -27,12 +25,12 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.menuList.count
+        return self.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = menuTable.dequeueReusableCell(withIdentifier: "MenuItemForClient") as? MenuItemCell{
-            cell.configureCell(menuItemVM: menuList[indexPath.row])
+            cell.configureCell(menuItemVM: dataSource[indexPath.row])
             return cell
         } else {
             return UITableViewCell()
@@ -47,11 +45,16 @@ class MenuForClient: UIViewController, UITableViewDelegate, UITableViewDataSourc
         if segue.identifier == "OrderConfirm" {
             if let destVC = segue.destination as? OrderConfirmVC {
                 var orderItems = [OrderItemVM]()
-                for item in menuList {
+                for item in dataSource {
                     orderItems.append(OrderItemVM(menuItemVM: item, quantity: 0))
                 }
                 destVC.orderItemVMsList = orderItems
             }
         }
+    }
+    
+    func didFinishNetworkCall() {
+        self.dataSource = self.networker.viewModelsFetched[0].containees
+        self.menuTable.reloadData()
     }
 }

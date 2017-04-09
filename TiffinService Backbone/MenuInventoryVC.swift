@@ -10,7 +10,8 @@ import UIKit
 
 class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NetworkDelegate {
     
-    var networker = MenuItemNetworker()
+    var networker = MenuItemNetworker() //primary networker
+    var pubMenuNetworker = PublishedMenuNetworker() //secondary networker
 
     @IBOutlet weak var inventoryTable: UITableView!
     
@@ -36,7 +37,7 @@ class MenuInventoryVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBAction func publishMenuBtnClicked(sender: UIButton) {
         let publishedMenuVM = PublishedMenuVM(pubDate: getCurrentDate(), menuItemVMs: Array(self.dataSource[2...8])) //Replace with vendor selected menu
-        publishedMenuVM.writeToDB() {
+        pubMenuNetworker.writeToDB(viewModel: publishedMenuVM) {
             print("Items published")
         }
     }
