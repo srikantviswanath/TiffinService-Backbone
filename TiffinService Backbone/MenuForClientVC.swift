@@ -18,12 +18,23 @@ class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         menuTable.delegate = self
         menuTable.dataSource = self
+        self.orderTotalLbl.text = "$0"
         self.networker.delegate = self
         self.networker.getMenu()
     }
     
     @IBAction func SubmitOrder(sender: UIButton) {
-        performSegue(withIdentifier: "OrderConfirm", sender: nil)
+        let userId = "userId109"
+        let orderVM = OrderVM(userId: userId, userName: "PullaRao, M", orderTime: getCurrentTime(), orderDate: getCurrentDate(), orderItemVMs: self.dataSource)
+        orderVM.writeToDB {
+            let transactionVM = TransactionVM(amount: self.orderTotalLbl.text!, type: "ORDER", userId: userId)
+            transactionVM.writeToDB {
+                BalanceNetworker.getBalancePerUser(userId: userId, userFN: "PullaRao", userLN: "Meka") { balanceVM in
+                    balanceVM.updateBalance(newDeltaQty: self.orderTotalLbl.text!)
+                    balanceVM.writeToDB()
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,18 +56,6 @@ class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "OrderConfirm" {
-            if let destVC = segue.destination as? OrderConfirmVC {
-                var orderItems = [OrderItemVM]()
-                for item in dataSource {
-                    orderItems.append(OrderItemVM(menuItemVM: item, quantity: 0))
-                }
-                destVC.orderItemVMsList = orderItems
-            }
-        }
-    }*/
     
     func didFinishNetworkCall() {
         let menuItemVMs = self.networker.viewModelsFetched[0].containees

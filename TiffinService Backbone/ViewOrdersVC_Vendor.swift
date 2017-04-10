@@ -18,10 +18,10 @@ class ViewOrdersVC_Vendor: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         ordersByCustomersTable.delegate = self
         ordersByCustomersTable.dataSource = self
-        OrderVM().getAllByPeople(for: "03-20-2017") { orderVM in
+        /*OrderVM().getAllByPeople(for: "03-20-2017") { orderVM in
             self.ordersByCustomers.append(orderVM)
             self.ordersByCustomersTable.reloadData()
-        }
+        }*/
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

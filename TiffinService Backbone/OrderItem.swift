@@ -40,6 +40,7 @@ class Order: Mappable {
     var userId: String!
     var userName: String!
     var orderTime: String!
+    var orderDate: String!
     var containees: [OrderItem]!
     
     required init?(map: Map) {}
@@ -50,8 +51,9 @@ class Order: Mappable {
         
     }
     
-    init(userId: String, userName: String, orderTime: String, orderItems: [OrderItem]) {
+    init(userId: String, userName: String, orderTime: String, orderDate: String, orderItems: [OrderItem]) {
         self.userId = userId
+        self.orderDate = orderDate
         self.userName = userName
         self.orderTime = orderTime
         self.containees = orderItems
