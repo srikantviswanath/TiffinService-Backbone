@@ -72,21 +72,13 @@ class OrderVM {
     }
     
     /// For creating instance from UI
-    init(userId: String, userName: String, orderTime: String, orderItemVMs: [OrderItemVM]) {
+    init(userId: String, userName: String, orderTime: String, orderDate: String, orderItemVMs: [OrderItemVM]) {
         self.userId = userId
         self.userName = userName
         self.orderTime = orderTime
-        var orderItems = [OrderItem]()
-        for orderItemVM in orderItemVMs {
-            orderItems.append(orderItemVM.model)
-        }
-        self.model = Order(userId: userId, userName: userName, orderTime: orderTime, orderItems: orderItems)
+        self.containees = orderItemVMs.filter {Int($0.quantity)! > 0}
+        self.model = Order(userId: userId, userName: userName, orderTime: orderTime, orderDate: orderDate, orderItems: self.containees.map {$0.model})
         
-    }
-    
-    ///CAUTION: Used internally as a placeholder for invoking any instance methods. Be very careful while calling this
-    convenience init() {
-        self.init(userId: "DORMANT", userName: "DORMANT", orderTime: "DORMANT", orderItemVMs: [OrderItemVM]())
     }
     
     func getAllByPeople(for date: String = getCurrentDate(), completed: @escaping (OrderVM) -> ()) {

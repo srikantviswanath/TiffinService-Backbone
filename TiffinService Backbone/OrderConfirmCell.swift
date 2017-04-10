@@ -14,6 +14,7 @@ class OrderConfirmCell : UITableViewCell {
     @IBOutlet weak var ItemName: UILabel!
     @IBOutlet weak var ItemDescription: UILabel!
     @IBOutlet weak var QtyOrdered: UILabel!
+    @IBOutlet weak var UnitPrice: UILabel!
     @IBOutlet weak var ItemTotal: UILabel!
     @IBOutlet weak var QtyStepper: UIStepper!
     
@@ -22,7 +23,6 @@ class OrderConfirmCell : UITableViewCell {
     
     var preStepperQty: Int!
     
-    //FIXME(Bug introduced) - Stepper changed value on reused cell shows incorrect value
     @IBAction func QtyStepperPressed(sender: UIStepper) {
         let newQty = Int(sender.value).description
         self.QtyOrdered.text = newQty
@@ -35,6 +35,7 @@ class OrderConfirmCell : UITableViewCell {
     func configureCell(orderItemVM: OrderItemVM){
         self.ItemName.text = orderItemVM.name
         self.ItemDescription.text = orderItemVM.description
+        self.UnitPrice.text = orderItemVM.price
         self.QtyOrdered.text = orderItemVM.quantity
         self.QtyStepper.value = Double(orderItemVM.quantity)!
         self.preStepperQty = Int(orderItemVM.quantity)
