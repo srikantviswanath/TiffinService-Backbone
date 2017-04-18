@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import ObjectMapper
 
-struct BalanceNetworker {
+class BalanceNetworker {
     
     static var REF_BALANCES = FIRDatabase.database().reference().child("Balances")
     

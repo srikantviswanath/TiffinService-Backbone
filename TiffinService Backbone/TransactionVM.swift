@@ -42,11 +42,4 @@ class TransactionVM {
         let txnAmount = String(amount.characters.dropFirst())
         self.model = Transaction(amount: Int(txnAmount)!, type: type, date: getCurrentDate(), time: getCurrentTime(), userId: userId)
     }
-    
-    func writeToDB(completed: @escaping ()->()) {
-        self.networker.writeToDB(model: self.model) {
-            completed()
-        }
-    }
-    
 }

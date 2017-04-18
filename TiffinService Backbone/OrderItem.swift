@@ -28,7 +28,7 @@ class OrderItem: MenuInventoryItem {
     override func mapping(map: Map) {
         self.name <- map["Name"]
         self.price <- map["Price"]
-        self.quantity <- map["Quantity"]
+        self.quantity <- map["Count"]
         self.instructions <- map["Instructions"]
     }
 }

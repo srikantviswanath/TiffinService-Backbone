@@ -12,29 +12,35 @@ class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var menuTable: UITableView!
     @IBOutlet weak var orderTotalLbl: UILabel!
     
-    var networker = PublishedMenuNetworker()
+    var publishedMenuNetworker = PublishedMenuNetworker()
+    var orderItemNetworker = OrderItemNetworker()
+    var orderNetworker = OrderNetworker()
+    var transactionNetworker = TransactionNetworker()
+    var balanceNetworker = BalanceNetworker()
+    
     var dataSource = [OrderItemVM]()
     override func viewDidLoad() {
         super.viewDidLoad()
         menuTable.delegate = self
         menuTable.dataSource = self
         self.orderTotalLbl.text = "$0"
-        self.networker.delegate = self
-        self.networker.getMenu()
+        self.publishedMenuNetworker.delegate = self
+        self.publishedMenuNetworker.getMenu()
     }
     
     @IBAction func SubmitOrder(sender: UIButton) {
-        let userId = "userId109"
+        let userId = USER
         let orderVM = OrderVM(userId: userId, userName: "PullaRao, M", orderTime: getCurrentTime(), orderDate: getCurrentDate(), orderItemVMs: self.dataSource)
-        orderVM.writeToDB {
+        orderNetworker.writeToDB(viewModel: orderVM) {
             let transactionVM = TransactionVM(amount: self.orderTotalLbl.text!, type: "ORDER", userId: userId)
-            transactionVM.writeToDB {
+            self.transactionNetworker.writeToDB(viewModel: transactionVM) {
                 BalanceNetworker.getBalancePerUser(userId: userId, userFN: "PullaRao", userLN: "Meka") { balanceVM in
                     balanceVM.updateBalance(newDeltaQty: self.orderTotalLbl.text!)
                     balanceVM.writeToDB()
                 }
             }
         }
+        orderItemNetworker.writeToDB(viewModels: orderVM.containees)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +64,7 @@ class MenuForClientVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func didFinishNetworkCall() {
-        let menuItemVMs = self.networker.viewModelsFetched[0].containees
+        let menuItemVMs = self.publishedMenuNetworker.viewModelsFetched[0].containees
         for item in menuItemVMs! {
             self.dataSource.append(OrderItemVM(menuItemVM: item, quantity: 0))
         }

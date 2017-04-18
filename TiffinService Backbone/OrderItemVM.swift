@@ -87,9 +87,5 @@ class OrderVM {
             completed(orderVM)
         }
     }
-    
-    func writeToDB(update: Bool = false, completed: @escaping () -> ()) {
-        self.networker.writeToDB(model: self.model, completed: completed)
-    }
 }
 
